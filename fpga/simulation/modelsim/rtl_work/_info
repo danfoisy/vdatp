@@ -1,0 +1,114 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/projects/holo/FPGA/Holo5/simulation/modelsim
+vFlashFifo
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+!s110 1615664330
+!i10b 1
+!s100 V]NT?YekhG_^Rg<Nd[Ukh3
+IB5QIFP?m^TJ4?PJGF;A?L2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s105 FlashFifo_v_unit
+S1
+R0
+w1613856486
+8D:/projects/holo/FPGA/Holo5/FlashFifo.v
+FD:/projects/holo/FPGA/Holo5/FlashFifo.v
+L0 40
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1615664330.000000
+!s107 D:/projects/holo/FPGA/Holo5/FlashFifo.v|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/projects/holo/FPGA/Holo5|D:/projects/holo/FPGA/Holo5/FlashFifo.v|
+!i113 1
+Z4 o-sv -work work
+Z5 !s92 -sv -work work +incdir+D:/projects/holo/FPGA/Holo5
+Z6 tCvgOpt 0
+n@flash@fifo
+vSqrtf
+R1
+Z7 !s110 1615664333
+!i10b 1
+!s100 [GL_ig1WoigS[_4JWM_WS0
+I=H0i8<GTYKUPi=SmLG9Ad3
+R2
+Z8 !s105 Sqrtf_v_unit
+S1
+R0
+Z9 w1614043463
+Z10 8D:/projects/holo/FPGA/Holo5/Sqrtf.v
+Z11 FD:/projects/holo/FPGA/Holo5/Sqrtf.v
+L0 1805
+R3
+r1
+!s85 0
+31
+Z12 !s108 1615664333.000000
+Z13 !s107 D:/projects/holo/FPGA/Holo5/Sqrtf.v|
+Z14 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/projects/holo/FPGA/Holo5|D:/projects/holo/FPGA/Holo5/Sqrtf.v|
+!i113 1
+R4
+R5
+R6
+n@sqrtf
+vSqrtf_alt_sqrt_block_vjb
+R1
+R7
+!i10b 1
+!s100 2ZCh?eND_KS0I8VR8GDhT3
+I[:g;GB6J357F:DLG_4T1b3
+R2
+R8
+S1
+R0
+R9
+R10
+R11
+L0 51
+R3
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 1
+R4
+R5
+R6
+n@sqrtf_alt_sqrt_block_vjb
+vSqrtf_altfp_sqrt_8qc
+R1
+R7
+!i10b 1
+!s100 oi=]c;?@ne520IzYTEG400
+ImM1mG=OV4:g96ZXAz?A;Q1
+R2
+R8
+S1
+R0
+R9
+R10
+R11
+L0 1082
+R3
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 1
+R4
+R5
+R6
+n@sqrtf_altfp_sqrt_8qc

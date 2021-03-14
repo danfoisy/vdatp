@@ -1,0 +1,51 @@
+--altshift_taps CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" DEVICE_FAMILY="Cyclone 10 LP" NUMBER_OF_TAPS=1 TAP_DISTANCE=8 WIDTH=49 clken clock shiftin taps CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48 CYCLONEII_M4K_COMPATIBILITY="ON" LOW_POWER_MODE="AUTO"
+--VERSION_BEGIN 18.1 cbx_altdpram 2019:04:11:16:04:12:SJ cbx_altera_counter 2019:04:11:16:04:12:SJ cbx_altera_syncram 2019:04:11:16:04:12:SJ cbx_altera_syncram_nd_impl 2019:04:11:16:04:12:SJ cbx_altshift_taps 2019:04:11:16:04:12:SJ cbx_altsyncram 2019:04:11:16:04:12:SJ cbx_cycloneii 2019:04:11:16:04:12:SJ cbx_lpm_add_sub 2019:04:11:16:04:12:SJ cbx_lpm_compare 2019:04:11:16:04:12:SJ cbx_lpm_counter 2019:04:11:16:04:12:SJ cbx_lpm_decode 2019:04:11:16:04:12:SJ cbx_lpm_mux 2019:04:11:16:04:12:SJ cbx_mgl 2019:04:11:16:07:46:SJ cbx_nadder 2019:04:11:16:04:12:SJ cbx_stratix 2019:04:11:16:04:12:SJ cbx_stratixii 2019:04:11:16:04:12:SJ cbx_stratixiii 2019:04:11:16:04:12:SJ cbx_stratixv 2019:04:11:16:04:12:SJ cbx_util_mgl 2019:04:11:16:04:12:SJ  VERSION_END
+
+
+-- Copyright (C) 2019  Intel Corporation. All rights reserved.
+--  Your use of Intel Corporation's design tools, logic functions 
+--  and other software and tools, and any partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Intel Program License 
+--  Subscription Agreement, the Intel Quartus Prime License Agreement,
+--  the Intel FPGA IP License Agreement, or other applicable license
+--  agreement, including, without limitation, that your use is for
+--  the sole purpose of programming logic devices manufactured by
+--  Intel and sold by Intel or its authorized distributors.  Please
+--  refer to the applicable agreement for further details, at
+--  https://fpgasoftware.intel.com/eula.
+
+
+FUNCTION altsyncram_fe81 (address_a[2..0], address_b[2..0], clock0, clocken0, data_a[48..0], wren_a)
+RETURNS ( q_b[48..0]);
+FUNCTION cntr_3pf (clk_en, clock)
+RETURNS ( q[2..0]);
+
+--synthesis_resources = lut 3 M9K 2 reg 3 
+SUBDESIGN shift_taps_tnm
+( 
+	clken	:	input;
+	clock	:	input;
+	shiftin[48..0]	:	input;
+	shiftout[48..0]	:	output;
+	taps[48..0]	:	output;
+) 
+VARIABLE 
+	altsyncram2 : altsyncram_fe81;
+	cntr1 : cntr_3pf;
+
+BEGIN 
+	altsyncram2.address_a[] = cntr1.q[];
+	altsyncram2.address_b[] = cntr1.q[];
+	altsyncram2.clock0 = clock;
+	altsyncram2.clocken0 = clken;
+	altsyncram2.data_a[] = ( shiftin[]);
+	altsyncram2.wren_a = B"1";
+	cntr1.clk_en = clken;
+	cntr1.clock = clock;
+	shiftout[48..0] = altsyncram2.q_b[48..0];
+	taps[] = altsyncram2.q_b[];
+END;
+--VALID FILE

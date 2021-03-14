@@ -1,0 +1,50 @@
+--scfifo ADD_RAM_OUTPUT_REGISTER="OFF" DEVICE_FAMILY="Cyclone 10 LP" LPM_NUMWORDS=16384 LPM_SHOWAHEAD="ON" LPM_WIDTH=39 LPM_WIDTHU=14 OPTIMIZE_FOR_SPEED=5 OVERFLOW_CHECKING="ON" UNDERFLOW_CHECKING="ON" USE_EAB="ON" clock data empty full q rdreq wrreq CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48 CYCLONEII_M4K_COMPATIBILITY="ON" INTENDED_DEVICE_FAMILY="Cyclone 10 LP" LOW_POWER_MODE="AUTO"
+--VERSION_BEGIN 18.1 cbx_altdpram 2019:04:11:16:04:12:SJ cbx_altera_counter 2019:04:11:16:04:12:SJ cbx_altera_syncram 2019:04:11:16:04:12:SJ cbx_altera_syncram_nd_impl 2019:04:11:16:04:12:SJ cbx_altsyncram 2019:04:11:16:04:12:SJ cbx_cycloneii 2019:04:11:16:04:12:SJ cbx_fifo_common 2019:04:11:16:04:12:SJ cbx_lpm_add_sub 2019:04:11:16:04:12:SJ cbx_lpm_compare 2019:04:11:16:04:12:SJ cbx_lpm_counter 2019:04:11:16:04:12:SJ cbx_lpm_decode 2019:04:11:16:04:12:SJ cbx_lpm_mux 2019:04:11:16:04:12:SJ cbx_mgl 2019:04:11:16:07:46:SJ cbx_nadder 2019:04:11:16:04:12:SJ cbx_scfifo 2019:04:11:16:04:12:SJ cbx_stratix 2019:04:11:16:04:12:SJ cbx_stratixii 2019:04:11:16:04:12:SJ cbx_stratixiii 2019:04:11:16:04:12:SJ cbx_stratixv 2019:04:11:16:04:12:SJ cbx_util_mgl 2019:04:11:16:04:12:SJ  VERSION_END
+
+
+-- Copyright (C) 2019  Intel Corporation. All rights reserved.
+--  Your use of Intel Corporation's design tools, logic functions 
+--  and other software and tools, and any partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Intel Program License 
+--  Subscription Agreement, the Intel Quartus Prime License Agreement,
+--  the Intel FPGA IP License Agreement, or other applicable license
+--  agreement, including, without limitation, that your use is for
+--  the sole purpose of programming logic devices manufactured by
+--  Intel and sold by Intel or its authorized distributors.  Please
+--  refer to the applicable agreement for further details, at
+--  https://fpgasoftware.intel.com/eula.
+
+
+FUNCTION a_dpfifo_ad31 (clock, data[38..0], rreq, sclr, wreq)
+RETURNS ( empty, full, q[38..0]);
+
+--synthesis_resources = lut 39 M9K 78 reg 23 
+SUBDESIGN scfifo_3731
+( 
+	clock	:	input;
+	data[38..0]	:	input;
+	empty	:	output;
+	full	:	output;
+	q[38..0]	:	output;
+	rdreq	:	input;
+	wrreq	:	input;
+) 
+VARIABLE 
+	dpfifo : a_dpfifo_ad31;
+	sclr	: NODE;
+
+BEGIN 
+	dpfifo.clock = clock;
+	dpfifo.data[] = data[];
+	dpfifo.rreq = rdreq;
+	dpfifo.sclr = sclr;
+	dpfifo.wreq = wrreq;
+	empty = dpfifo.empty;
+	full = dpfifo.full;
+	q[] = dpfifo.q[];
+	sclr = GND;
+END;
+--VALID FILE

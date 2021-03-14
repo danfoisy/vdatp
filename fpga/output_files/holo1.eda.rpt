@@ -1,0 +1,94 @@
+EDA Netlist Writer report for holo1
+Sat Mar 06 16:02:05 2021
+Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. EDA Netlist Writer Summary
+  3. Simulation Settings
+  4. Simulation Generated Files
+  5. EDA Netlist Writer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------+
+; EDA Netlist Writer Summary                                        ;
++---------------------------+---------------------------------------+
+; EDA Netlist Writer Status ; Successful - Sat Mar 06 16:02:05 2021 ;
+; Revision Name             ; holo1                                 ;
+; Top-level Entity Name     ; HoloTop                               ;
+; Family                    ; Cyclone 10 LP                         ;
+; Simulation Files Creation ; Successful                            ;
++---------------------------+---------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Settings                                                                                                                 ;
++---------------------------------------------------------------------------------------------------+---------------------------------+
+; Option                                                                                            ; Setting                         ;
++---------------------------------------------------------------------------------------------------+---------------------------------+
+; Tool Name                                                                                         ; ModelSim-Altera (SystemVerilog) ;
+; Generate functional simulation netlist                                                            ; On                              ;
+; Truncate long hierarchy paths                                                                     ; Off                             ;
+; Map illegal HDL characters                                                                        ; Off                             ;
+; Flatten buses into individual nodes                                                               ; Off                             ;
+; Maintain hierarchy                                                                                ; Off                             ;
+; Bring out device-wide set/reset signals as ports                                                  ; Off                             ;
+; Enable glitch filtering                                                                           ; Off                             ;
+; Do not write top level VHDL entity                                                                ; Off                             ;
+; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                             ;
+; Architecture name in VHDL output netlist                                                          ; structure                       ;
+; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                             ;
+; Generate third-party EDA tool command script for gate-level simulation                            ; Off                             ;
++---------------------------------------------------------------------------------------------------+---------------------------------+
+
+
++-----------------------------------------------------------+
+; Simulation Generated Files                                ;
++-----------------------------------------------------------+
+; Generated Files                                           ;
++-----------------------------------------------------------+
+; D:/projects/holo/FPGA/Holo5/simulation/modelsim/holo1.svo ;
++-----------------------------------------------------------+
+
+
++-----------------------------+
+; EDA Netlist Writer Messages ;
++-----------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime EDA Netlist Writer
+    Info: Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
+    Info: Processing started: Sat Mar 06 16:02:04 2021
+Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off holo1 -c holo1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (204019): Generated file holo1.svo in folder "D:/projects/holo/FPGA/Holo5/simulation/modelsim/" for EDA simulation tool
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4658 megabytes
+    Info: Processing ended: Sat Mar 06 16:02:05 2021
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
+
+

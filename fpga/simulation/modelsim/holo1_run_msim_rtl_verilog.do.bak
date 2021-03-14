@@ -1,0 +1,25 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo1 {D:/projects/holo/FPGA/Holo1/Sub10.v}
+vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo1 {D:/projects/holo/FPGA/Holo1/Sqr.v}
+vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo1 {D:/projects/holo/FPGA/Holo1/Add22.v}
+vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo1 {D:/projects/holo/FPGA/Holo1/Int2Float.v}
+vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo1 {D:/projects/holo/FPGA/Holo1/Sqrtf.v}
+vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo1 {D:/projects/holo/FPGA/Holo1/MultK.v}
+vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo1 {D:/projects/holo/FPGA/Holo1/AddSub.v}
+vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo1 {D:/projects/holo/FPGA/Holo1/Float2Int.v}
+vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo1 {D:/projects/holo/FPGA/Holo1/Divide16.v}
+vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo1 {D:/projects/holo/FPGA/Holo1/Pll.v}
+vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo1/db {D:/projects/holo/FPGA/Holo1/db/pll_altpll.v}
+vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo1 {D:/projects/holo/FPGA/Holo1/pwm.sv}
+vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo1 {D:/projects/holo/FPGA/Holo1/CalcPhase.sv}
+vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo1 {D:/projects/holo/FPGA/Holo1/Reset.sv}
+vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo1 {D:/projects/holo/FPGA/Holo1/PwmCtrl.sv}
+vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo1 {D:/projects/holo/FPGA/Holo1/Holo.sv}
+vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo1 {D:/projects/holo/FPGA/Holo1/HoloTop.sv}
+

@@ -1,0 +1,58 @@
+--lpm_add_sub CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48 DEVICE_FAMILY="Cyclone 10 LP" LPM_PIPELINE=1 LPM_REPRESENTATION="SIGNED" LPM_WIDTH=14 USE_WYS="ON" aclr(gnd) add_sub cin clken(vcc) clock dataa datab result
+--VERSION_BEGIN 18.1 cbx_cycloneii 2019:04:11:16:04:12:SJ cbx_lpm_add_sub 2019:04:11:16:04:12:SJ cbx_mgl 2019:04:11:16:07:46:SJ cbx_nadder 2019:04:11:16:04:12:SJ cbx_stratix 2019:04:11:16:04:12:SJ cbx_stratixii 2019:04:11:16:04:12:SJ  VERSION_END
+
+
+-- Copyright (C) 2019  Intel Corporation. All rights reserved.
+--  Your use of Intel Corporation's design tools, logic functions 
+--  and other software and tools, and any partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Intel Program License 
+--  Subscription Agreement, the Intel Quartus Prime License Agreement,
+--  the Intel FPGA IP License Agreement, or other applicable license
+--  agreement, including, without limitation, that your use is for
+--  the sole purpose of programming logic devices manufactured by
+--  Intel and sold by Intel or its authorized distributors.  Please
+--  refer to the applicable agreement for further details, at
+--  https://fpgasoftware.intel.com/eula.
+
+
+FUNCTION cyclone10lp_lcell_comb (cin, dataa, datab, datac, datad)
+WITH ( DONT_TOUCH, LUT_MASK, SUM_LUTC_INPUT)
+RETURNS ( combout, cout);
+
+--synthesis_resources = lut 14 reg 14 
+SUBDESIGN add_sub_i3j
+( 
+	aclr	:	input;
+	add_sub	:	input;
+	cin	:	input;
+	clken	:	input;
+	clock	:	input;
+	dataa[13..0]	:	input;
+	datab[13..0]	:	input;
+	result[13..0]	:	output;
+) 
+VARIABLE 
+	add_sub_cella[13..0] : cyclone10lp_lcell_comb
+		WITH (
+			LUT_MASK = "96E8",
+			SUM_LUTC_INPUT = "cin"
+		);
+	lcell_ffa[13..0] : dffe;
+	const_node_aclr	: NODE;
+	const_node_clken	: NODE;
+
+BEGIN 
+	add_sub_cella[].cin = ( add_sub_cella[12..0].cout, cin);
+	add_sub_cella[].dataa = dataa[];
+	add_sub_cella[].datab = (datab[] $ (! add_sub));
+	add_sub_cella[].datad = B"11111111111111";
+	lcell_ffa[].clk = clock;
+	lcell_ffa[].d = add_sub_cella[].combout;
+	const_node_aclr = aclr;
+	const_node_clken = clken;
+	result[] = lcell_ffa[].q;
+END;
+--VALID FILE

@@ -1,0 +1,40 @@
+ module HoloTop (
+	input CLK_24M576,
+	
+	output [49:0] t,
+	
+	input mosi,
+	input sck,
+	input ncs
+ );
+ 
+	localparam IN_CLK_FREQ = 24576000;
+	localparam CLK_FREQ = 20480000;
+	localparam OUT_FREQ = 40000;
+	localparam NUM_CHANNELS = 50;
+	
+	logic clk;
+	logic nReset;
+	Pll pll(
+		.inclk0(CLK_24M576),
+		.c0(clk)
+	);
+	
+	Reset reset(
+		.clk,
+		.nReset
+	);
+	
+	Holo holo(
+		.clk,
+		.nReset,
+		
+		.t,
+		
+		.mosi,
+		.sck,
+		.ncs
+	);
+ 
+ endmodule
+ 

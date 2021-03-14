@@ -1,0 +1,59 @@
+--altbarrel_shift CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" DEVICE_FAMILY="Cyclone 10 LP" PIPELINE=1 SHIFTDIR="LEFT" WIDTH=26 WIDTHDIST=5 aclr clk_en clock data distance result
+--VERSION_BEGIN 18.1 cbx_altbarrel_shift 2019:04:11:16:04:12:SJ cbx_mgl 2019:04:11:16:07:46:SJ  VERSION_END
+
+
+-- Copyright (C) 2019  Intel Corporation. All rights reserved.
+--  Your use of Intel Corporation's design tools, logic functions 
+--  and other software and tools, and any partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Intel Program License 
+--  Subscription Agreement, the Intel Quartus Prime License Agreement,
+--  the Intel FPGA IP License Agreement, or other applicable license
+--  agreement, including, without limitation, that your use is for
+--  the sole purpose of programming logic devices manufactured by
+--  Intel and sold by Intel or its authorized distributors.  Please
+--  refer to the applicable agreement for further details, at
+--  https://fpgasoftware.intel.com/eula.
+
+
+
+--synthesis_resources = reg 27 
+SUBDESIGN altbarrel_shift_hif
+( 
+	aclr	:	input;
+	clk_en	:	input;
+	clock	:	input;
+	data[25..0]	:	input;
+	distance[4..0]	:	input;
+	result[25..0]	:	output;
+) 
+VARIABLE 
+	dir_pipe[0..0] : dffe;
+	sbit_piper1d[25..0] : dffe;
+	dir_w[5..0]	: WIRE;
+	direction_w	: WIRE;
+	pad_w[15..0]	: WIRE;
+	sbit_w[155..0]	: WIRE;
+	sel_w[4..0]	: WIRE;
+	smux_w[129..0]	: WIRE;
+
+BEGIN 
+	dir_pipe[].clk = clock;
+	dir_pipe[].clrn = (! aclr);
+	dir_pipe[].d = ( dir_w[4..4]);
+	dir_pipe[].ena = clk_en;
+	sbit_piper1d[].clk = clock;
+	sbit_piper1d[].clrn = (! aclr);
+	sbit_piper1d[].d = smux_w[129..104];
+	sbit_piper1d[].ena = clk_en;
+	dir_w[] = ( dir_pipe[0..0].q, dir_w[3..0], direction_w);
+	direction_w = B"0";
+	pad_w[] = B"0000000000000000";
+	result[25..0] = sbit_w[155..130];
+	sbit_w[] = ( sbit_piper1d[].q, smux_w[103..0], data[]);
+	sel_w[] = ( distance[4..0]);
+	smux_w[] = ( ((((sel_w[4..4] & (! dir_w[4..4])) & ( sbit_w[113..104], pad_w[15..0])) # ((sel_w[4..4] & dir_w[4..4]) & ( pad_w[15..0], sbit_w[129..120]))) # ((! sel_w[4..4]) & sbit_w[129..104])), ((((sel_w[3..3] & (! dir_w[3..3])) & ( sbit_w[95..78], pad_w[7..0])) # ((sel_w[3..3] & dir_w[3..3]) & ( pad_w[7..0], sbit_w[103..86]))) # ((! sel_w[3..3]) & sbit_w[103..78])), ((((sel_w[2..2] & (! dir_w[2..2])) & ( sbit_w[73..52], pad_w[3..0])) # ((sel_w[2..2] & dir_w[2..2]) & ( pad_w[3..0], sbit_w[77..56]))) # ((! sel_w[2..2]) & sbit_w[77..52])), ((((sel_w[1..1] & (! dir_w[1..1])) & ( sbit_w[49..26], pad_w[1..0])) # ((sel_w[1..1] & dir_w[1..1]) & ( pad_w[1..0], sbit_w[51..28]))) # ((! sel_w[1..1]) & sbit_w[51..26])), ((((sel_w[0..0] & (! dir_w[0..0])) & ( sbit_w[24..0], pad_w[0..0])) # ((sel_w[0..0] & dir_w[0..0]) & ( pad_w[0..0], sbit_w[25..1]))) # ((! sel_w[0..0]) & sbit_w[25..0])));
+END;
+--VALID FILE

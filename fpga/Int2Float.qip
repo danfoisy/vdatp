@@ -1,0 +1,9 @@
+set_global_assignment -name IP_TOOL_NAME "ALTFP_CONVERT"
+set_global_assignment -name IP_TOOL_VERSION "18.1"
+set_global_assignment -name IP_GENERATED_DEVICE_FAMILY "{Cyclone 10 LP}"
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) "Int2Float.v"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "Int2Float.bsf"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "Int2Float_inst.v"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "Int2Float_bb.v"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "Int2Float.inc"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "Int2Float.cmp"]

@@ -1,0 +1,22 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# TC4428A-Driver_FET
+#
+DEF TC4428A-Driver_FET U 0 40 Y Y 1 F N
+F0 "U" -200 450 50 H V C CNN
+F1 "TC4428A-Driver_FET" -50 350 50 H V C CNN
+F2 "" -50 0 50 H I C CNN
+F3 "" -50 0 50 H I C CNN
+DRAW
+S -300 200 300 -250 0 1 0 N
+X in_A 2 -400 100 100 R 50 50 1 1 I
+X gnd 3 0 -350 100 U 50 50 1 1 W
+X in_B 4 -400 -150 100 R 50 50 1 1 I
+X out_B 5 400 -150 100 L 50 50 1 1 W
+X Vdd 6 0 300 100 D 50 50 1 1 W
+X ~out_A 7 400 100 100 L 50 50 1 1 W I
+ENDDRAW
+ENDDEF
+#
+#End Library

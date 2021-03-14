@@ -1,0 +1,790 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/projects/holo/FPGA/Holo5/simulation/modelsim
+vCalcPhase
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1614528973
+!i10b 1
+!s100 T:WRa0U^;i[11Rj@==iGA2
+IcGD@QAfX<BeiTNaGkoeLG3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 CalcPhase_sv_unit
+S1
+R0
+w1614454512
+8D:/projects/holo/FPGA/Holo5/CalcPhase.sv
+FD:/projects/holo/FPGA/Holo5/CalcPhase.sv
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1614528973.000000
+!s107 D:/projects/holo/FPGA/Holo5/CalcPhase.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/projects/holo/FPGA/Holo5|D:/projects/holo/FPGA/Holo5/CalcPhase.sv|
+!i113 1
+Z6 o-sv -work work
+Z7 !s92 -sv -work work +incdir+D:/projects/holo/FPGA/Holo5
+Z8 tCvgOpt 0
+n@calc@phase
+vFlashFifo
+R1
+Z9 !s110 1614528965
+!i10b 1
+!s100 V]NT?YekhG_^Rg<Nd[Ukh3
+IB5QIFP?m^TJ4?PJGF;A?L2
+R3
+!s105 FlashFifo_v_unit
+S1
+R0
+w1613856486
+8D:/projects/holo/FPGA/Holo5/FlashFifo.v
+FD:/projects/holo/FPGA/Holo5/FlashFifo.v
+Z10 L0 40
+R4
+r1
+!s85 0
+31
+Z11 !s108 1614528965.000000
+!s107 D:/projects/holo/FPGA/Holo5/FlashFifo.v|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/projects/holo/FPGA/Holo5|D:/projects/holo/FPGA/Holo5/FlashFifo.v|
+!i113 1
+R6
+R7
+R8
+n@flash@fifo
+vFloat2Int
+R1
+R9
+!i10b 1
+!s100 i5SjPoda>S2jk<:>lR2WD1
+IAZ56A>NZFMnT6_zmIg8O10
+R3
+Z12 !s105 Float2Int_v_unit
+S1
+R0
+Z13 w1609688584
+Z14 8D:/projects/holo/FPGA/Holo5/Float2Int.v
+Z15 FD:/projects/holo/FPGA/Holo5/Float2Int.v
+L0 907
+R4
+r1
+!s85 0
+31
+R11
+Z16 !s107 D:/projects/holo/FPGA/Holo5/Float2Int.v|
+Z17 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/projects/holo/FPGA/Holo5|D:/projects/holo/FPGA/Holo5/Float2Int.v|
+!i113 1
+R6
+R7
+R8
+n@float2@int
+vFloat2Int_altbarrel_shift_rvf
+R1
+R9
+!i10b 1
+!s100 e4G7_YFR[eMTDA0V1k7f]3
+I>3jMi=enBA2UB5`50dX[;1
+R3
+R12
+S1
+R0
+R13
+R14
+R15
+Z18 L0 51
+R4
+r1
+!s85 0
+31
+R11
+R16
+R17
+!i113 1
+R6
+R7
+R8
+n@float2@int_altbarrel_shift_rvf
+vFloat2Int_altfp_convert_e1n
+R1
+R9
+!i10b 1
+!s100 `R]MLCT0c@SFTD<NC1J5B3
+IBbeYZ<C7[m9S`Ef>d5@N20
+R3
+R12
+S1
+R0
+R13
+R14
+R15
+L0 144
+R4
+r1
+!s85 0
+31
+R11
+R16
+R17
+!i113 1
+R6
+R7
+R8
+n@float2@int_altfp_convert_e1n
+vInt2Float
+R1
+R9
+!i10b 1
+!s100 B7;fU@P?=nRT=Oe1;HROL2
+ICeCOHe<F0:LIj:n4lk6U]1
+R3
+Z19 !s105 Int2Float_v_unit
+S1
+R0
+Z20 w1609688575
+Z21 8D:/projects/holo/FPGA/Holo5/Int2Float.v
+Z22 FD:/projects/holo/FPGA/Holo5/Int2Float.v
+L0 689
+R4
+r1
+!s85 0
+31
+R11
+Z23 !s107 D:/projects/holo/FPGA/Holo5/Int2Float.v|
+Z24 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/projects/holo/FPGA/Holo5|D:/projects/holo/FPGA/Holo5/Int2Float.v|
+!i113 1
+R6
+R7
+R8
+n@int2@float
+vInt2Float_altbarrel_shift_lvf
+R1
+R9
+!i10b 1
+!s100 4`MzekOo<7AO9J>nPW9TN1
+IF7Vj9^?bRY`=jN7Eid?3l1
+R3
+R19
+S1
+R0
+R20
+R21
+R22
+R18
+R4
+r1
+!s85 0
+31
+R11
+R23
+R24
+!i113 1
+R6
+R7
+R8
+n@int2@float_altbarrel_shift_lvf
+vInt2Float_altfp_convert_c1n
+R1
+R9
+!i10b 1
+!s100 ?`?Bbd;S8d9H[JA=@kEcF0
+I[^D:Ie87>aLHVP6lb@dKD1
+R3
+R19
+S1
+R0
+R20
+R21
+R22
+L0 418
+R4
+r1
+!s85 0
+31
+R11
+R23
+R24
+!i113 1
+R6
+R7
+R8
+n@int2@float_altfp_convert_c1n
+vInt2Float_altpriority_encoder_3e8
+R1
+R9
+!i10b 1
+!s100 9JeEDDVcWMc^99RAKQWLR0
+I7eJoOK4F1TQbH=Yzmn?YS1
+R3
+R19
+S1
+R0
+R20
+R21
+R22
+L0 176
+R4
+r1
+!s85 0
+31
+R11
+R23
+R24
+!i113 1
+R6
+R7
+R8
+n@int2@float_altpriority_encoder_3e8
+vInt2Float_altpriority_encoder_3v7
+R1
+R9
+!i10b 1
+!s100 CbH[e:XLofzHDmYG97ejS3
+IB:EG;0gHS5@=?E2`kF;dG3
+R3
+R19
+S1
+R0
+R20
+R21
+R22
+L0 156
+R4
+r1
+!s85 0
+31
+R11
+R23
+R24
+!i113 1
+R6
+R7
+R8
+n@int2@float_altpriority_encoder_3v7
+vInt2Float_altpriority_encoder_6e8
+R1
+R9
+!i10b 1
+!s100 4hggnod4U1d>G3@zo90YP3
+IYz5afcaXTPUl1W<L=3KgA3
+R3
+R19
+S1
+R0
+R20
+R21
+R22
+L0 227
+R4
+r1
+!s85 0
+31
+R11
+R23
+R24
+!i113 1
+R6
+R7
+R8
+n@int2@float_altpriority_encoder_6e8
+vInt2Float_altpriority_encoder_6v7
+R1
+R9
+!i10b 1
+!s100 XX4`icUDSnlJ3^db4FKmg3
+I_5C?dAeJP@9[ao=<H4?Zj1
+R3
+R19
+S1
+R0
+R20
+R21
+R22
+L0 195
+R4
+r1
+!s85 0
+31
+R11
+R23
+R24
+!i113 1
+R6
+R7
+R8
+n@int2@float_altpriority_encoder_6v7
+vInt2Float_altpriority_encoder_be8
+R1
+R9
+!i10b 1
+!s100 22`;b`>O2;0GYziYL=VYR2
+ICoAYPEHCDm`fM0dQ]Q1W80
+R3
+R19
+S1
+R0
+R20
+R21
+R22
+L0 292
+R4
+r1
+!s85 0
+31
+R11
+R23
+R24
+!i113 1
+R6
+R7
+R8
+n@int2@float_altpriority_encoder_be8
+vInt2Float_altpriority_encoder_bv7
+R1
+R9
+!i10b 1
+!s100 H1go[?:?U7^llScUC0Lm?1
+IK<e>nOzZ?UBW6z@HhQ9>[2
+R3
+R19
+S1
+R0
+R20
+R21
+R22
+L0 260
+R4
+r1
+!s85 0
+31
+R11
+R23
+R24
+!i113 1
+R6
+R7
+R8
+n@int2@float_altpriority_encoder_bv7
+vInt2Float_altpriority_encoder_qb6
+R1
+R9
+!i10b 1
+!s100 Z_7hU]]a0Il93zEdD6]Q11
+IeHIl8VQ49;4SJ90nHd]dz2
+R3
+R19
+S1
+R0
+R20
+R21
+R22
+L0 390
+R4
+r1
+!s85 0
+31
+R11
+R23
+R24
+!i113 1
+R6
+R7
+R8
+n@int2@float_altpriority_encoder_qb6
+vInt2Float_altpriority_encoder_r08
+R1
+R9
+!i10b 1
+!s100 EPcOl]1DYP6HEUnbEdmXk1
+IB2<iYNKD_M;8B`Re9X?]a1
+R3
+R19
+S1
+R0
+R20
+R21
+R22
+L0 325
+R4
+r1
+!s85 0
+31
+R11
+R23
+R24
+!i113 1
+R6
+R7
+R8
+n@int2@float_altpriority_encoder_r08
+vInt2Float_altpriority_encoder_rf8
+R1
+R9
+!i10b 1
+!s100 WH6_H6HH9OKNDlGBQW8zM3
+I>o:i7<lNPbkcdYXl0BF>12
+R3
+R19
+S1
+R0
+R20
+R21
+R22
+L0 357
+R4
+r1
+!s85 0
+31
+R11
+R23
+R24
+!i113 1
+R6
+R7
+R8
+n@int2@float_altpriority_encoder_rf8
+vLED
+R1
+R2
+!i10b 1
+!s100 MT6ffNPCcHb:GRPNDQ2f30
+IEm?9B<zE058:oMY5a0UE=2
+R3
+!s105 led_sv_unit
+S1
+R0
+w1612646600
+8D:/projects/holo/FPGA/Holo5/led.sv
+FD:/projects/holo/FPGA/Holo5/led.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/projects/holo/FPGA/Holo5/led.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/projects/holo/FPGA/Holo5|D:/projects/holo/FPGA/Holo5/led.sv|
+!i113 1
+R6
+R7
+R8
+n@l@e@d
+vMultK
+R1
+R9
+!i10b 1
+!s100 VL:4K;YQV:R<o95lUOSX50
+IN7VI0OGVh7gk8P7nJDC`91
+R3
+Z25 !s105 MultK_v_unit
+S1
+R0
+Z26 w1614043452
+Z27 8D:/projects/holo/FPGA/Holo5/MultK.v
+Z28 FD:/projects/holo/FPGA/Holo5/MultK.v
+L0 511
+R4
+r1
+!s85 0
+31
+R11
+Z29 !s107 D:/projects/holo/FPGA/Holo5/MultK.v|
+Z30 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/projects/holo/FPGA/Holo5|D:/projects/holo/FPGA/Holo5/MultK.v|
+!i113 1
+R6
+R7
+R8
+n@mult@k
+vMultK_altfp_mult_mrn
+R1
+R9
+!i10b 1
+!s100 9>32^R?_0nYgSiAJ^kAQj3
+Ig^I7N?IGQ=ocbloQ;9[1o1
+R3
+R25
+S1
+R0
+R26
+R27
+R28
+L0 47
+R4
+r1
+!s85 0
+31
+R11
+R29
+R30
+!i113 1
+R6
+R7
+R8
+n@mult@k_altfp_mult_mrn
+vPll
+R1
+R9
+!i10b 1
+!s100 `RJe[llZA_b`:;C:`6;da2
+I=^9nhT>8Gn]TCG:>2SzEE0
+R3
+!s105 Pll_v_unit
+S1
+R0
+w1614042825
+8D:/projects/holo/FPGA/Holo5/Pll.v
+FD:/projects/holo/FPGA/Holo5/Pll.v
+R10
+R4
+r1
+!s85 0
+31
+R11
+!s107 D:/projects/holo/FPGA/Holo5/Pll.v|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/projects/holo/FPGA/Holo5|D:/projects/holo/FPGA/Holo5/Pll.v|
+!i113 1
+R6
+R7
+R8
+n@pll
+vPll_altpll
+R1
+Z31 !s110 1614528972
+!i10b 1
+!s100 0;:g85[T0P2=h?Fg4OnVe2
+I^=Q>_KJ;>boNg`_I5zUX[3
+R3
+!s105 pll_altpll_v_unit
+S1
+R0
+w1614042844
+8D:/projects/holo/FPGA/Holo5/db/pll_altpll.v
+FD:/projects/holo/FPGA/Holo5/db/pll_altpll.v
+L0 30
+R4
+r1
+!s85 0
+31
+Z32 !s108 1614528972.000000
+!s107 D:/projects/holo/FPGA/Holo5/db/pll_altpll.v|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/projects/holo/FPGA/Holo5/db|D:/projects/holo/FPGA/Holo5/db/pll_altpll.v|
+!i113 1
+R6
+!s92 -sv -work work +incdir+D:/projects/holo/FPGA/Holo5/db
+R8
+n@pll_altpll
+vPosColRam
+R1
+!s110 1614528970
+!i10b 1
+!s100 J=;^SRTXbk58dMk`FRAGk3
+I;AW]I6bKXW:2J_]Eg48L11
+R3
+!s105 PosColRam_v_unit
+S1
+R0
+w1614480851
+8D:/projects/holo/FPGA/Holo5/PosColRam.v
+FD:/projects/holo/FPGA/Holo5/PosColRam.v
+R10
+R4
+r1
+!s85 0
+31
+!s108 1614528970.000000
+!s107 D:/projects/holo/FPGA/Holo5/PosColRam.v|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/projects/holo/FPGA/Holo5|D:/projects/holo/FPGA/Holo5/PosColRam.v|
+!i113 1
+R6
+R7
+R8
+n@pos@col@ram
+vPWM
+R1
+R2
+!i10b 1
+!s100 NXeNV^LM]C84=n;gZ>;MB0
+IFcPkm0fbFZMYCL5eIk00]1
+R3
+!s105 pwm_sv_unit
+S1
+R0
+w1610906323
+8D:/projects/holo/FPGA/Holo5/pwm.sv
+FD:/projects/holo/FPGA/Holo5/pwm.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R32
+!s107 D:/projects/holo/FPGA/Holo5/pwm.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/projects/holo/FPGA/Holo5|D:/projects/holo/FPGA/Holo5/pwm.sv|
+!i113 1
+R6
+R7
+R8
+n@p@w@m
+vPwmCtrl
+R1
+R2
+!i10b 1
+!s100 R1C:z:jEm`RXRT8DR2JK33
+IQE@R_K_lM`jUS<hZh07]B2
+R3
+!s105 PwmCtrl_sv_unit
+S1
+R0
+w1613097707
+8D:/projects/holo/FPGA/Holo5/PwmCtrl.sv
+FD:/projects/holo/FPGA/Holo5/PwmCtrl.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/projects/holo/FPGA/Holo5/PwmCtrl.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/projects/holo/FPGA/Holo5|D:/projects/holo/FPGA/Holo5/PwmCtrl.sv|
+!i113 1
+R6
+R7
+R8
+n@pwm@ctrl
+vQPIFlash
+R1
+R31
+!i10b 1
+!s100 0_A1]QIOc4]zKk1Id0[^_3
+IMXJ@z1:dT6NH[ogNmWK6B0
+R3
+!s105 QPIFlash_sv_unit
+S1
+R0
+w1613915756
+8D:/projects/holo/FPGA/Holo5/QPIFlash.sv
+FD:/projects/holo/FPGA/Holo5/QPIFlash.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R32
+!s107 D:/projects/holo/FPGA/Holo5/QPIFlash.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/projects/holo/FPGA/Holo5|D:/projects/holo/FPGA/Holo5/QPIFlash.sv|
+!i113 1
+R6
+R7
+R8
+n@q@p@i@flash
+vReset
+R1
+R2
+!i10b 1
+!s100 dl5l2Do8]A7cKO2_LRAmO0
+IOa6jQaJLajG`Mk1Y40[SO0
+R3
+!s105 Reset_sv_unit
+S1
+R0
+w1582166975
+8D:/projects/holo/FPGA/Holo5/Reset.sv
+FD:/projects/holo/FPGA/Holo5/Reset.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/projects/holo/FPGA/Holo5/Reset.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/projects/holo/FPGA/Holo5|D:/projects/holo/FPGA/Holo5/Reset.sv|
+!i113 1
+R6
+R7
+R8
+n@reset
+vSqrtf
+R1
+R9
+!i10b 1
+!s100 [GL_ig1WoigS[_4JWM_WS0
+I=H0i8<GTYKUPi=SmLG9Ad3
+R3
+Z33 !s105 Sqrtf_v_unit
+S1
+R0
+Z34 w1614043463
+Z35 8D:/projects/holo/FPGA/Holo5/Sqrtf.v
+Z36 FD:/projects/holo/FPGA/Holo5/Sqrtf.v
+L0 1805
+R4
+r1
+!s85 0
+31
+R11
+Z37 !s107 D:/projects/holo/FPGA/Holo5/Sqrtf.v|
+Z38 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/projects/holo/FPGA/Holo5|D:/projects/holo/FPGA/Holo5/Sqrtf.v|
+!i113 1
+R6
+R7
+R8
+n@sqrtf
+vSqrtf_alt_sqrt_block_vjb
+R1
+R9
+!i10b 1
+!s100 2ZCh?eND_KS0I8VR8GDhT3
+I[:g;GB6J357F:DLG_4T1b3
+R3
+R33
+S1
+R0
+R34
+R35
+R36
+R18
+R4
+r1
+!s85 0
+31
+R11
+R37
+R38
+!i113 1
+R6
+R7
+R8
+n@sqrtf_alt_sqrt_block_vjb
+vSqrtf_altfp_sqrt_8qc
+R1
+R9
+!i10b 1
+!s100 oi=]c;?@ne520IzYTEG400
+ImM1mG=OV4:g96ZXAz?A;Q1
+R3
+R33
+S1
+R0
+R34
+R35
+R36
+L0 1082
+R4
+r1
+!s85 0
+31
+R11
+R37
+R38
+!i113 1
+R6
+R7
+R8
+n@sqrtf_altfp_sqrt_8qc

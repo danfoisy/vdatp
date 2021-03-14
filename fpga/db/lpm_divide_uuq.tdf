@@ -1,0 +1,45 @@
+--lpm_divide DEVICE_FAMILY="Cyclone 10 LP" LPM_DREPRESENTATION="UNSIGNED" LPM_NREPRESENTATION="SIGNED" LPM_PIPELINE=1 LPM_REMAINDERPOSITIVE="FALSE" LPM_WIDTHD=12 LPM_WIDTHN=32 OPTIMIZE_FOR_SPEED=5 clock denom numer remain CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48 IGNORE_CARRY_BUFFERS="OFF"
+--VERSION_BEGIN 18.1 cbx_cycloneii 2019:04:11:16:04:12:SJ cbx_lpm_abs 2019:04:11:16:04:12:SJ cbx_lpm_add_sub 2019:04:11:16:04:12:SJ cbx_lpm_divide 2019:04:11:16:04:12:SJ cbx_mgl 2019:04:11:16:07:46:SJ cbx_nadder 2019:04:11:16:04:12:SJ cbx_stratix 2019:04:11:16:04:12:SJ cbx_stratixii 2019:04:11:16:04:12:SJ cbx_util_mgl 2019:04:11:16:04:12:SJ  VERSION_END
+
+
+-- Copyright (C) 2019  Intel Corporation. All rights reserved.
+--  Your use of Intel Corporation's design tools, logic functions 
+--  and other software and tools, and any partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Intel Program License 
+--  Subscription Agreement, the Intel Quartus Prime License Agreement,
+--  the Intel FPGA IP License Agreement, or other applicable license
+--  agreement, including, without limitation, that your use is for
+--  the sole purpose of programming logic devices manufactured by
+--  Intel and sold by Intel or its authorized distributors.  Please
+--  refer to the applicable agreement for further details, at
+--  https://fpgasoftware.intel.com/eula.
+
+
+FUNCTION abs_divider_j5h (clock, denominator[11..0], numerator[31..0])
+RETURNS ( quotient[31..0], remainder[11..0]);
+
+--synthesis_resources = lut 441 reg 91 
+SUBDESIGN lpm_divide_uuq
+( 
+	clock	:	input;
+	denom[11..0]	:	input;
+	numer[31..0]	:	input;
+	quotient[31..0]	:	output;
+	remain[11..0]	:	output;
+) 
+VARIABLE 
+	divider : abs_divider_j5h;
+	numer_tmp[31..0]	: WIRE;
+
+BEGIN 
+	divider.clock = clock;
+	divider.denominator[] = denom[];
+	divider.numerator[] = numer_tmp[];
+	numer_tmp[] = numer[];
+	quotient[] = divider.quotient[];
+	remain[] = divider.remainder[];
+END;
+--VALID FILE

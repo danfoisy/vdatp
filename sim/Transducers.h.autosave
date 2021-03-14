@@ -1,0 +1,57 @@
+#ifndef TRANSDUCERS_H
+#define TRANSDUCERS_H
+
+#define NUM_TRANSDUCERS_X 10
+#define NUM_TRANSDUCERS_Z 10
+#define TRANSDUCER_SPACING_X 10     //mm
+#define TRANSDUCER_SPACING_Z 10     //mm
+#define SIM_HEIGHT 150
+#define SIM_PTS_CM 4
+
+class SimPoints
+{
+public:
+    
+    SimPoints()
+    {
+        float Xnormal = 2.0 / numPtsX();
+        float Znormal = 2.0 / numPtsZ();
+        float Ynormal = 1.0 / numPtsY();
+        
+        if(Xnormal <= ZNormal && Xnormal <= YNormal)
+            normal = Xnormal;
+        else if(Znormal <= XNormal && Znormal <= YNormal)
+            normal = Znormal;
+        else
+            normal = Ynormal;
+    }
+    
+    float Xidx2NDC(int x)
+    {
+        return (x - numPtsX()/2) * normal;
+    }
+    
+    float Xidx2NDC(int x)
+    {
+        return (x - numPtsX()/2) * normal;
+    }
+    
+    
+    int numPtsX()
+    {
+        return (NUM_TRANSDUCERS_X * TRANSDUCER_SPACING_X)/10 * SIM_PTS_CM + SIM_PTS_CM-1;
+    }
+    
+    int numPtsZ()
+    {
+        return (NUM_TRANSDUCERS_Z * TRANSDUCER_SPACING_Z)/10 * SIM_PTS_CM + SIM_PTS_CM-1;
+    }
+    
+    int numPtsY()
+    {
+        return SIM_HEIGHT/10 * SIM_PTS_CM ;
+    }
+    
+    static float normal;
+}
+#endif // TRANSDUCERS_H

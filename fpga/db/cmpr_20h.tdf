@@ -1,0 +1,47 @@
+--lpm_compare CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" DEVICE_FAMILY="Cyclone 10 LP" LPM_REPRESENTATION="UNSIGNED" LPM_WIDTH=8 aeb agb dataa datab CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48
+--VERSION_BEGIN 18.1 cbx_cycloneii 2019:04:11:16:04:12:SJ cbx_lpm_add_sub 2019:04:11:16:04:12:SJ cbx_lpm_compare 2019:04:11:16:04:12:SJ cbx_mgl 2019:04:11:16:07:46:SJ cbx_nadder 2019:04:11:16:04:12:SJ cbx_stratix 2019:04:11:16:04:12:SJ cbx_stratixii 2019:04:11:16:04:12:SJ  VERSION_END
+
+
+-- Copyright (C) 2019  Intel Corporation. All rights reserved.
+--  Your use of Intel Corporation's design tools, logic functions 
+--  and other software and tools, and any partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Intel Program License 
+--  Subscription Agreement, the Intel Quartus Prime License Agreement,
+--  the Intel FPGA IP License Agreement, or other applicable license
+--  agreement, including, without limitation, that your use is for
+--  the sole purpose of programming logic devices manufactured by
+--  Intel and sold by Intel or its authorized distributors.  Please
+--  refer to the applicable agreement for further details, at
+--  https://fpgasoftware.intel.com/eula.
+
+
+
+--synthesis_resources = lut 13 
+SUBDESIGN cmpr_20h
+( 
+	aeb	:	output;
+	agb	:	output;
+	dataa[7..0]	:	input;
+	datab[7..0]	:	input;
+) 
+VARIABLE
+	aeb_int	:	WIRE;
+	agb_int	:	WIRE;
+BEGIN 
+	IF (dataa[] == datab[]) THEN
+		aeb_int = VCC;
+	ELSE
+		aeb_int = GND;
+	END IF;
+	IF (dataa[] > datab[]) THEN
+		agb_int = VCC;
+	ELSE
+		agb_int = GND;
+	END IF;
+	aeb = aeb_int;
+	agb = agb_int;
+END;
+--VALID FILE

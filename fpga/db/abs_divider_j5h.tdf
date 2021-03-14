@@ -1,0 +1,103 @@
+--abs_divider DEN_REPRESENTATION="UNSIGNED" LPM_PIPELINE=1 MAXIMIZE_SPEED=5 NUM_REPRESENTATION="SIGNED" SKIP_BITS=0 WIDTH_D=12 WIDTH_N=32 clock denominator numerator quotient remainder
+--VERSION_BEGIN 18.1 cbx_cycloneii 2019:04:11:16:04:12:SJ cbx_lpm_abs 2019:04:11:16:04:12:SJ cbx_lpm_add_sub 2019:04:11:16:04:12:SJ cbx_lpm_divide 2019:04:11:16:04:12:SJ cbx_mgl 2019:04:11:16:07:46:SJ cbx_nadder 2019:04:11:16:04:12:SJ cbx_stratix 2019:04:11:16:04:12:SJ cbx_stratixii 2019:04:11:16:04:12:SJ cbx_util_mgl 2019:04:11:16:04:12:SJ  VERSION_END
+
+
+-- Copyright (C) 2019  Intel Corporation. All rights reserved.
+--  Your use of Intel Corporation's design tools, logic functions 
+--  and other software and tools, and any partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Intel Program License 
+--  Subscription Agreement, the Intel Quartus Prime License Agreement,
+--  the Intel FPGA IP License Agreement, or other applicable license
+--  agreement, including, without limitation, that your use is for
+--  the sole purpose of programming logic devices manufactured by
+--  Intel and sold by Intel or its authorized distributors.  Please
+--  refer to the applicable agreement for further details, at
+--  https://fpgasoftware.intel.com/eula.
+
+
+FUNCTION alt_u_div_9rf (clock, denominator[11..0], numerator[31..0])
+RETURNS ( quotient[31..0], remainder[11..0]);
+FUNCTION lpm_abs_b0a (data[31..0])
+RETURNS ( overflow, result[31..0]);
+
+--synthesis_resources = lut 441 reg 91 
+SUBDESIGN abs_divider_j5h
+( 
+	clock	:	input;
+	denominator[11..0]	:	input;
+	numerator[31..0]	:	input;
+	quotient[31..0]	:	output;
+	remainder[11..0]	:	output;
+) 
+VARIABLE 
+	divider : alt_u_div_9rf;
+	DFF_diff_signs[0..0] : dffe;
+	DFF_num_sign[0..0] : dffe;
+	my_abs_num : lpm_abs_b0a;
+	compl_add_quot_result_int[32..0]	:	WIRE;
+	compl_add_quot_cin	:	WIRE;
+	compl_add_quot_dataa[31..0]	:	WIRE;
+	compl_add_quot_datab[31..0]	:	WIRE;
+	compl_add_quot_result[31..0]	:	WIRE;
+	compl_add_rem_result_int[12..0]	:	WIRE;
+	compl_add_rem_cin	:	WIRE;
+	compl_add_rem_dataa[11..0]	:	WIRE;
+	compl_add_rem_datab[11..0]	:	WIRE;
+	compl_add_rem_result[11..0]	:	WIRE;
+	aclr	: NODE;
+	clk_en	: NODE;
+	dff_num_sign_q_out	: WIRE;
+	diff_signs	: WIRE;
+	gnd_wire	: WIRE;
+	neg_quot[31..0]	: WIRE;
+	neg_rem[11..0]	: WIRE;
+	norm_den[11..0]	: WIRE;
+	norm_num[31..0]	: WIRE;
+	num_sign	: WIRE;
+	protect_quotient[31..0]	: WIRE;
+	protect_remainder[11..0]	: WIRE;
+	vcc_wire	: WIRE;
+
+BEGIN 
+	divider.clock = clock;
+	divider.denominator[] = norm_den[];
+	divider.numerator[] = norm_num[];
+	DFF_diff_signs[].clk = clock;
+	DFF_diff_signs[].clrn = (! aclr);
+	DFF_diff_signs[].d = ( diff_signs);
+	DFF_diff_signs[].ena = clk_en;
+	DFF_num_sign[].clk = clock;
+	DFF_num_sign[].clrn = (! aclr);
+	DFF_num_sign[].d = ( num_sign);
+	DFF_num_sign[].ena = clk_en;
+	my_abs_num.data[] = numerator[];
+	compl_add_quot_result_int[] = (compl_add_quot_dataa[], compl_add_quot_cin) + (compl_add_quot_datab[], compl_add_quot_cin);
+	compl_add_quot_result[] = compl_add_quot_result_int[32..1];
+	compl_add_quot_cin = vcc_wire;
+	compl_add_quot_dataa[] = (! protect_quotient[]);
+	compl_add_quot_datab[] = ( gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire);
+	compl_add_rem_result_int[] = (compl_add_rem_dataa[], compl_add_rem_cin) + (compl_add_rem_datab[], compl_add_rem_cin);
+	compl_add_rem_result[] = compl_add_rem_result_int[12..1];
+	compl_add_rem_cin = vcc_wire;
+	compl_add_rem_dataa[] = (! protect_remainder[]);
+	compl_add_rem_datab[] = ( gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire, gnd_wire);
+	aclr = GND;
+	clk_en = VCC;
+	dff_num_sign_q_out = DFF_num_sign[0..0].q;
+	diff_signs = numerator[31..31];
+	gnd_wire = B"0";
+	neg_quot[] = compl_add_quot_result[];
+	neg_rem[] = compl_add_rem_result[];
+	norm_den[] = denominator[];
+	norm_num[] = my_abs_num.result[];
+	num_sign = numerator[31..31];
+	protect_quotient[] = divider.quotient[];
+	protect_remainder[] = divider.remainder[];
+	quotient[] = ((protect_quotient[] & (! DFF_diff_signs[0..0].q)) # (neg_quot[] & DFF_diff_signs[0..0].q));
+	remainder[] = ((protect_remainder[] & (! dff_num_sign_q_out)) # (neg_rem[] & dff_num_sign_q_out));
+	vcc_wire = B"1";
+END;
+--VALID FILE

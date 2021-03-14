@@ -1,0 +1,5 @@
+- add 0R on ncs/mosi/sck coming from U101 to allow using U101 at the same time as U102 for syncin signal
+- as_* nets on FGPA2 are wrong on top page
+- conf_done and nStatus lines should be connected together
+- PD on LED enable lines
+

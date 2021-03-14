@@ -1,0 +1,41 @@
+--altpriority_encoder CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" LSB_PRIORITY="NO" WIDTH=16 WIDTHAD=4 data q zero
+--VERSION_BEGIN 18.1 cbx_altpriority_encoder 2019:04:11:16:04:12:SJ cbx_mgl 2019:04:11:16:07:46:SJ  VERSION_END
+
+
+-- Copyright (C) 2019  Intel Corporation. All rights reserved.
+--  Your use of Intel Corporation's design tools, logic functions 
+--  and other software and tools, and any partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Intel Program License 
+--  Subscription Agreement, the Intel Quartus Prime License Agreement,
+--  the Intel FPGA IP License Agreement, or other applicable license
+--  agreement, including, without limitation, that your use is for
+--  the sole purpose of programming logic devices manufactured by
+--  Intel and sold by Intel or its authorized distributors.  Please
+--  refer to the applicable agreement for further details, at
+--  https://fpgasoftware.intel.com/eula.
+
+
+FUNCTION altpriority_encoder_0s9 (data[7..0])
+RETURNS ( q[2..0], zero);
+
+--synthesis_resources = 
+SUBDESIGN altpriority_encoder_gt9
+( 
+	data[15..0]	:	input;
+	q[3..0]	:	output;
+	zero	:	output;
+) 
+VARIABLE 
+	altpriority_encoder19 : altpriority_encoder_0s9;
+	altpriority_encoder20 : altpriority_encoder_0s9;
+
+BEGIN 
+	altpriority_encoder19.data[7..0] = data[7..0];
+	altpriority_encoder20.data[7..0] = data[15..8];
+	q[] = ( (! altpriority_encoder20.zero), ((altpriority_encoder20.zero & altpriority_encoder19.q[]) # ((! altpriority_encoder20.zero) & altpriority_encoder20.q[])));
+	zero = (altpriority_encoder19.zero & altpriority_encoder20.zero);
+END;
+--VALID FILE

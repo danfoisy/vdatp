@@ -1,0 +1,200 @@
+# vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo5 {D:/projects/holo/FPGA/Holo5/Int2Float.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:38:59 on Mar 13,2021
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/projects/holo/FPGA/Holo5" D:/projects/holo/FPGA/Holo5/Int2Float.v 
+# -- Compiling module Int2Float_altbarrel_shift_lvf
+# -- Compiling module Int2Float_altpriority_encoder_3v7
+# -- Compiling module Int2Float_altpriority_encoder_3e8
+# -- Compiling module Int2Float_altpriority_encoder_6v7
+# -- Compiling module Int2Float_altpriority_encoder_6e8
+# -- Compiling module Int2Float_altpriority_encoder_bv7
+# -- Compiling module Int2Float_altpriority_encoder_be8
+# -- Compiling module Int2Float_altpriority_encoder_r08
+# -- Compiling module Int2Float_altpriority_encoder_rf8
+# -- Compiling module Int2Float_altpriority_encoder_qb6
+# -- Compiling module Int2Float_altfp_convert_c1n
+# -- Compiling module Int2Float
+# 
+# Top level modules:
+# 	Int2Float
+# End time: 14:38:59 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo5 {D:/projects/holo/FPGA/Holo5/MultK.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:38:59 on Mar 13,2021
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/projects/holo/FPGA/Holo5" D:/projects/holo/FPGA/Holo5/MultK.v 
+# -- Compiling module MultK_altfp_mult_mrn
+# -- Compiling module MultK
+# 
+# Top level modules:
+# 	MultK
+# End time: 14:38:59 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo5 {D:/projects/holo/FPGA/Holo5/Float2Int.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:38:59 on Mar 13,2021
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/projects/holo/FPGA/Holo5" D:/projects/holo/FPGA/Holo5/Float2Int.v 
+# -- Compiling module Float2Int_altbarrel_shift_rvf
+# -- Compiling module Float2Int_altfp_convert_e1n
+# -- Compiling module Float2Int
+# 
+# Top level modules:
+# 	Float2Int
+# End time: 14:38:59 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo5 {D:/projects/holo/FPGA/Holo5/Pll.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:38:59 on Mar 13,2021
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/projects/holo/FPGA/Holo5" D:/projects/holo/FPGA/Holo5/Pll.v 
+# -- Compiling module Pll
+# 
+# Top level modules:
+# 	Pll
+# End time: 14:38:59 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo5 {D:/projects/holo/FPGA/Holo5/PosColRam.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:38:59 on Mar 13,2021
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/projects/holo/FPGA/Holo5" D:/projects/holo/FPGA/Holo5/PosColRam.v 
+# -- Compiling module PosColRam
+# 
+# Top level modules:
+# 	PosColRam
+# End time: 14:38:59 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo5 {D:/projects/holo/FPGA/Holo5/CoeffMult.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:38:59 on Mar 13,2021
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/projects/holo/FPGA/Holo5" D:/projects/holo/FPGA/Holo5/CoeffMult.v 
+# -- Compiling module CoeffMult
+# 
+# Top level modules:
+# 	CoeffMult
+# End time: 14:39:00 on Mar 13,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo5 {D:/projects/holo/FPGA/Holo5/CoeffAdd.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:39:00 on Mar 13,2021
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/projects/holo/FPGA/Holo5" D:/projects/holo/FPGA/Holo5/CoeffAdd.v 
+# -- Compiling module CoeffAdd
+# 
+# Top level modules:
+# 	CoeffAdd
+# End time: 14:39:00 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo5/db {D:/projects/holo/FPGA/Holo5/db/pll_altpll.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:39:00 on Mar 13,2021
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/projects/holo/FPGA/Holo5/db" D:/projects/holo/FPGA/Holo5/db/pll_altpll.v 
+# -- Compiling module Pll_altpll
+# 
+# Top level modules:
+# 	Pll_altpll
+# End time: 14:39:00 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo5 {D:/projects/holo/FPGA/Holo5/QPIFlash.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:39:00 on Mar 13,2021
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/projects/holo/FPGA/Holo5" D:/projects/holo/FPGA/Holo5/QPIFlash.sv 
+# -- Compiling module QPIFlash
+# 
+# Top level modules:
+# 	QPIFlash
+# End time: 14:39:00 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo5 {D:/projects/holo/FPGA/Holo5/pwm.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:39:00 on Mar 13,2021
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/projects/holo/FPGA/Holo5" D:/projects/holo/FPGA/Holo5/pwm.sv 
+# -- Compiling module PWM
+# 
+# Top level modules:
+# 	PWM
+# End time: 14:39:00 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo5 {D:/projects/holo/FPGA/Holo5/CalcPhase.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:39:00 on Mar 13,2021
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/projects/holo/FPGA/Holo5" D:/projects/holo/FPGA/Holo5/CalcPhase.sv 
+# -- Compiling module CalcPhase
+# 
+# Top level modules:
+# 	CalcPhase
+# End time: 14:39:00 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo5 {D:/projects/holo/FPGA/Holo5/Reset.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:39:00 on Mar 13,2021
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/projects/holo/FPGA/Holo5" D:/projects/holo/FPGA/Holo5/Reset.sv 
+# -- Compiling module Reset
+# 
+# Top level modules:
+# 	Reset
+# End time: 14:39:00 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo5 {D:/projects/holo/FPGA/Holo5/led.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:39:00 on Mar 13,2021
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/projects/holo/FPGA/Holo5" D:/projects/holo/FPGA/Holo5/led.sv 
+# -- Compiling module LED
+# 
+# Top level modules:
+# 	LED
+# End time: 14:39:00 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo5 {D:/projects/holo/FPGA/Holo5/PwmCtrl.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:39:00 on Mar 13,2021
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/projects/holo/FPGA/Holo5" D:/projects/holo/FPGA/Holo5/PwmCtrl.sv 
+# -- Compiling module PwmCtrl
+# 
+# Top level modules:
+# 	PwmCtrl
+# End time: 14:39:00 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo5 {D:/projects/holo/FPGA/Holo5/Rotate1D.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:39:00 on Mar 13,2021
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/projects/holo/FPGA/Holo5" D:/projects/holo/FPGA/Holo5/Rotate1D.sv 
+# -- Compiling module Rotate1D
+# 
+# Top level modules:
+# 	Rotate1D
+# End time: 14:39:01 on Mar 13,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo5 {D:/projects/holo/FPGA/Holo5/Holo.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:39:01 on Mar 13,2021
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/projects/holo/FPGA/Holo5" D:/projects/holo/FPGA/Holo5/Holo.sv 
+# -- Compiling module Holo
+# ** Error: D:/projects/holo/FPGA/Holo5/Holo.sv(113): (vlog-2730) Undefined variable: 'spiParameter'.
+# ** Error: D:/projects/holo/FPGA/Holo5/Holo.sv(128): (vlog-2730) Undefined variable: 'spiParameter'.
+# ** Error: D:/projects/holo/FPGA/Holo5/Holo.sv(137): (vlog-2730) Undefined variable: 'spiParameter'.
+# ** Error: D:/projects/holo/FPGA/Holo5/Holo.sv(158): (vlog-2730) Undefined variable: 'spiParameter'.
+# ** Error: D:/projects/holo/FPGA/Holo5/Holo.sv(170): (vlog-2730) Undefined variable: 'spiParameter'.
+# ** Error: D:/projects/holo/FPGA/Holo5/Holo.sv(183): (vlog-2730) Undefined variable: 'spiParameter'.
+# ** Error: D:/projects/holo/FPGA/Holo5/Holo.sv(195): (vlog-2730) Undefined variable: 'spiParameter'.
+# ** Error: D:/projects/holo/FPGA/Holo5/Holo.sv(198): (vlog-2730) Undefined variable: 'spiParameter'.
+# ** Error: D:/projects/holo/FPGA/Holo5/Holo.sv(214): (vlog-2730) Undefined variable: 'spiParameter'.
+# ** Error: D:/projects/holo/FPGA/Holo5/Holo.sv(246): (vlog-2730) Undefined variable: 'spiParameter'.
+# ** Error: D:/projects/holo/FPGA/Holo5/Holo.sv(388): (vlog-2730) Undefined variable: 'spiByteAvailable'.
+# ** Error: D:/projects/holo/FPGA/Holo5/Holo.sv(424): (vlog-2730) Undefined variable: 'spiByteBuffer'.
+# ** Error: D:/projects/holo/FPGA/Holo5/Holo.sv(436): (vlog-2730) Undefined variable: 'spiByteBuffer'.
+# ** Error: D:/projects/holo/FPGA/Holo5/Holo.sv(456): (vlog-2730) Undefined variable: 'spiByteBuffer'.
+# ** Error (suppressible): D:/projects/holo/FPGA/Holo5/Holo.sv(477): (vlog-2388) 'spiByteAvailable' already declared in this scope (Holo).
+# End time: 14:39:01 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 15, Warnings: 0
+# ** Error: D:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./holo1_run_msim_rtl_verilog.do line 25
+# D:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -sv -work work +incdir+D:/projects/holo/FPGA/Holo5 {D:/projects/holo/FPGA/Holo5/Holo.sv}"
+# Compile of MultK.v was successful.
+# Compile of Sqrtf.v was successful.
+# Compile of AddSub.v was successful.
+# Compile of Float2Int.v was successful.
+# Compile of Int2Float.v was successful.
+# Compile of CalcPhase_tb.sv was successful.
+# Compile of CalcPhase.sv was successful.
+# 7 compiles, 0 failed with no errors.
+vsim -gui -l msim_transcript work.CalcPhase_tb -L lpm_ver -L altera_mf_ver

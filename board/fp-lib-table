@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name holo)(type KiCad)(uri ${KIPRJMOD}/holo.pretty)(options "")(descr ""))
+  (lib (name flicker)(type KiCad)(uri D:/projects/flicker2/board/flicker)(options "")(descr ""))
+)

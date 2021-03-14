@@ -1,0 +1,143 @@
+D:/projects/holo/fpga/AddSub.v {1 {vlog -work work -stats=none D:/projects/holo/fpga/AddSub.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module AddSub_altbarrel_shift_s4e
+-- Compiling module AddSub_altbarrel_shift_hlb
+-- Compiling module AddSub_altpriority_encoder_3e8
+-- Compiling module AddSub_altpriority_encoder_6e8
+-- Compiling module AddSub_altpriority_encoder_be8
+-- Compiling module AddSub_altpriority_encoder_3v7
+-- Compiling module AddSub_altpriority_encoder_6v7
+-- Compiling module AddSub_altpriority_encoder_bv7
+-- Compiling module AddSub_altpriority_encoder_r08
+-- Compiling module AddSub_altpriority_encoder_rf8
+-- Compiling module AddSub_altpriority_encoder_qb6
+-- Compiling module AddSub_altpriority_encoder_nh8
+-- Compiling module AddSub_altpriority_encoder_qh8
+-- Compiling module AddSub_altpriority_encoder_vh8
+-- Compiling module AddSub_altpriority_encoder_fj8
+-- Compiling module AddSub_altpriority_encoder_n28
+-- Compiling module AddSub_altpriority_encoder_q28
+-- Compiling module AddSub_altpriority_encoder_v28
+-- Compiling module AddSub_altpriority_encoder_f48
+-- Compiling module AddSub_altpriority_encoder_e48
+-- Compiling module AddSub_altfp_add_sub_u4j
+-- Compiling module AddSub
+
+Top level modules:
+	AddSub
+
+} {} {}} D:/projects/holo/fpga/Divide16.v {1 {vlog -work work -stats=none D:/projects/holo/fpga/Divide16.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Divide16
+
+Top level modules:
+	Divide16
+
+} {} {}} D:/projects/holo/fpga/MultK.v {1 {vlog -work work -stats=none D:/projects/holo/fpga/MultK.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module MultK_altfp_mult_mrn
+-- Compiling module MultK
+
+Top level modules:
+	MultK
+
+} {} {}} D:/projects/holo/fpga/Reset.sv {1 {vlog -work work -sv -stats=none D:/projects/holo/fpga/Reset.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Reset
+
+Top level modules:
+	Reset
+
+} {} {}} D:/projects/holo/fpga/pwm.sv {1 {vlog -work work -sv -stats=none D:/projects/holo/fpga/pwm.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module PWM
+
+Top level modules:
+	PWM
+
+} {} {}} D:/projects/holo/fpga/Pll.v {1 {vlog -work work -stats=none D:/projects/holo/fpga/Pll.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Pll
+
+Top level modules:
+	Pll
+
+} {} {}} D:/projects/holo/fpga/Sqrtf.v {1 {vlog -work work -stats=none D:/projects/holo/fpga/Sqrtf.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Sqrtf_alt_sqrt_block_vjb
+-- Compiling module Sqrtf_altfp_sqrt_8qc
+-- Compiling module Sqrtf
+
+Top level modules:
+	Sqrtf
+
+} {} {}} D:/projects/holo/fpga/Holo_tb.sv {1 {vlog -work work -sv -stats=none D:/projects/holo/fpga/Holo_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Holo_tb
+
+Top level modules:
+	Holo_tb
+
+} {} {}} D:/projects/holo/fpga/Float2Int.v {1 {vlog -work work -stats=none D:/projects/holo/fpga/Float2Int.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Float2Int_altbarrel_shift_rvf
+-- Compiling module Float2Int_altfp_convert_e1n
+-- Compiling module Float2Int
+
+Top level modules:
+	Float2Int
+
+} {} {}} D:/projects/holo/fpga/Int2Float.v {1 {vlog -work work -stats=none D:/projects/holo/fpga/Int2Float.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Int2Float_altbarrel_shift_lvf
+-- Compiling module Int2Float_altpriority_encoder_3v7
+-- Compiling module Int2Float_altpriority_encoder_3e8
+-- Compiling module Int2Float_altpriority_encoder_6v7
+-- Compiling module Int2Float_altpriority_encoder_6e8
+-- Compiling module Int2Float_altpriority_encoder_bv7
+-- Compiling module Int2Float_altpriority_encoder_be8
+-- Compiling module Int2Float_altpriority_encoder_r08
+-- Compiling module Int2Float_altpriority_encoder_rf8
+-- Compiling module Int2Float_altpriority_encoder_qb6
+-- Compiling module Int2Float_altfp_convert_c1n
+-- Compiling module Int2Float
+
+Top level modules:
+	Int2Float
+
+} {} {}} D:/projects/holo/fpga/Sub10.v {1 {vlog -work work -stats=none D:/projects/holo/fpga/Sub10.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Sub10
+
+Top level modules:
+	Sub10
+
+} {} {}} D:/projects/holo/fpga/PwmCtrl.sv {1 {vlog -work work -sv -stats=none D:/projects/holo/fpga/PwmCtrl.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module PwmCtrl
+
+Top level modules:
+	PwmCtrl
+
+} {} {}} D:/projects/holo/fpga/Holo.sv {1 {vlog -work work -sv -stats=none D:/projects/holo/fpga/Holo.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Holo
+
+Top level modules:
+	Holo
+
+} {} {}} D:/projects/holo/fpga/Add22.v {1 {vlog -work work -stats=none D:/projects/holo/fpga/Add22.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Add22
+
+Top level modules:
+	Add22
+
+} {} {}} D:/projects/holo/fpga/Sqr.v {1 {vlog -work work -stats=none D:/projects/holo/fpga/Sqr.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Sqr
+
+Top level modules:
+	Sqr
+
+} {} {}}

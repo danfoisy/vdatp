@@ -1,0 +1,13 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP +2V5a
+D Power symbol creates a global label with name "+2V5"
+K power-flag
+$ENDCMP
+#
+$CMP +2V5b
+D Power symbol creates a global label with name "+2V5"
+K power-flag
+$ENDCMP
+#
+#End Doc Library

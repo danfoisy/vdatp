@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Mar 06 16:01:23 2021
+Quartus Prime Version : 18.1.1 Build 646 04/11/2019 SJ Lite Edition
+Revision Name : holo1
+Top-level Entity Name : HoloTop
+Family : Cyclone 10 LP
+Total logic elements : 5,973
+    Total combinational functions : 3,895
+    Dedicated logic registers : 3,722
+Total registers : 3722
+Total pins : 61
+Total virtual pins : 0
+Total memory bits : 376,832
+Embedded Multiplier 9-bit elements : 32
+Total PLLs : 1

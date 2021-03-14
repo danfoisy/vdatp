@@ -1,0 +1,10 @@
+module pwm #(parameter CLK_FREQ = 10000000, OUT_FREQ= 40000) (
+		input 		clk,
+		input 		phase,
+		input			amp,
+		output reg	out
+	);
+	
+	
+	
+endmodule

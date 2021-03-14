@@ -1,0 +1,84 @@
+--lpm_counter CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" DEVICE_FAMILY="Cyclone 10 LP" lpm_direction="UP" lpm_modulus=3 lpm_port_updown="PORT_UNUSED" lpm_width=2 clk_en clock q
+--VERSION_BEGIN 18.1 cbx_cycloneii 2019:04:11:16:04:12:SJ cbx_lpm_add_sub 2019:04:11:16:04:12:SJ cbx_lpm_compare 2019:04:11:16:04:12:SJ cbx_lpm_counter 2019:04:11:16:04:12:SJ cbx_lpm_decode 2019:04:11:16:04:12:SJ cbx_mgl 2019:04:11:16:07:46:SJ cbx_nadder 2019:04:11:16:04:12:SJ cbx_stratix 2019:04:11:16:04:12:SJ cbx_stratixii 2019:04:11:16:04:12:SJ  VERSION_END
+
+
+-- Copyright (C) 2019  Intel Corporation. All rights reserved.
+--  Your use of Intel Corporation's design tools, logic functions 
+--  and other software and tools, and any partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Intel Program License 
+--  Subscription Agreement, the Intel Quartus Prime License Agreement,
+--  the Intel FPGA IP License Agreement, or other applicable license
+--  agreement, including, without limitation, that your use is for
+--  the sole purpose of programming logic devices manufactured by
+--  Intel and sold by Intel or its authorized distributors.  Please
+--  refer to the applicable agreement for further details, at
+--  https://fpgasoftware.intel.com/eula.
+
+
+FUNCTION cmpr_hgc (dataa[1..0], datab[1..0])
+RETURNS ( aeb);
+
+--synthesis_resources = lut 2 reg 2 
+SUBDESIGN cntr_vof
+( 
+	clk_en	:	input;
+	clock	:	input;
+	q[1..0]	:	output;
+) 
+VARIABLE 
+	counter_reg_bit[1..0] : dffe;
+	add_sub4_result_int[2..0]	:	WIRE;
+	add_sub4_cout	:	WIRE;
+	add_sub4_dataa[1..0]	:	WIRE;
+	add_sub4_datab[1..0]	:	WIRE;
+	add_sub4_result[1..0]	:	WIRE;
+	cmpr5 : cmpr_hgc;
+	aclr_actual	: WIRE;
+	add_sub_one_w[1..0]	: WIRE;
+	add_value_w[1..0]	: WIRE;
+	cnt_en	: NODE;
+	compare_result	: WIRE;
+	cout_actual	: WIRE;
+	current_reg_q_w[1..0]	: WIRE;
+	custom_cout_w	: WIRE;
+	modulus_bus[1..0]	: WIRE;
+	modulus_trigger	: WIRE;
+	modulus_trigger_value_w[1..0]	: WIRE;
+	safe_q[1..0]	: WIRE;
+	time_to_clear	: WIRE;
+	trigger_mux_w[1..0]	: WIRE;
+	updown_dir	: WIRE;
+
+BEGIN 
+	counter_reg_bit[].clk = clock;
+	counter_reg_bit[].clrn = (! aclr_actual);
+	counter_reg_bit[].d = trigger_mux_w[];
+	counter_reg_bit[].ena = (clk_en & cnt_en);
+	add_sub4_result_int[] = (0, add_sub4_dataa[]) + (0, add_sub4_datab[]);
+	add_sub4_result[] = add_sub4_result_int[1..0];
+	add_sub4_cout = add_sub4_result_int[2];
+	add_sub4_dataa[] = current_reg_q_w[];
+	add_sub4_datab[] = add_value_w[];
+	cmpr5.dataa[] = safe_q[];
+	cmpr5.datab[] = modulus_bus[];
+	aclr_actual = B"0";
+	add_sub_one_w[] = add_sub4_result[];
+	add_value_w[] = B"01";
+	cnt_en = VCC;
+	compare_result = cmpr5.aeb;
+	cout_actual = (custom_cout_w # (time_to_clear & updown_dir));
+	current_reg_q_w[] = counter_reg_bit[].q;
+	custom_cout_w = (add_sub4_cout & add_value_w[0..0]);
+	modulus_bus[] = B"10";
+	modulus_trigger = cout_actual;
+	modulus_trigger_value_w[] = ((! updown_dir) & modulus_bus[]);
+	q[] = safe_q[];
+	safe_q[] = counter_reg_bit[].q;
+	time_to_clear = compare_result;
+	trigger_mux_w[] = (((! modulus_trigger) & add_sub_one_w[]) # (modulus_trigger & modulus_trigger_value_w[]));
+	updown_dir = B"1";
+END;
+--VALID FILE

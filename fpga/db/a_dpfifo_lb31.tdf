@@ -1,0 +1,141 @@
+--a_dpfifo ADD_RAM_OUTPUT_REGISTER="OFF" ALLOW_RWCYCLE_WHEN_FULL="OFF" DEVICE_FAMILY="Cyclone 10 LP" LPM_NUMWORDS=8192 LPM_SHOWAHEAD="ON" lpm_width=46 lpm_widthu=13 OVERFLOW_CHECKING="ON" UNDERFLOW_CHECKING="ON" clock data empty full q rreq sclr wreq CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48 CYCLONEII_M4K_COMPATIBILITY="ON" INTENDED_DEVICE_FAMILY="Cyclone 10 LP" LOW_POWER_MODE="AUTO"
+--VERSION_BEGIN 18.1 cbx_altdpram 2019:04:11:16:04:12:SJ cbx_altera_counter 2019:04:11:16:04:12:SJ cbx_altera_syncram 2019:04:11:16:04:12:SJ cbx_altera_syncram_nd_impl 2019:04:11:16:04:12:SJ cbx_altsyncram 2019:04:11:16:04:12:SJ cbx_cycloneii 2019:04:11:16:04:12:SJ cbx_fifo_common 2019:04:11:16:04:12:SJ cbx_lpm_add_sub 2019:04:11:16:04:12:SJ cbx_lpm_compare 2019:04:11:16:04:12:SJ cbx_lpm_counter 2019:04:11:16:04:12:SJ cbx_lpm_decode 2019:04:11:16:04:12:SJ cbx_lpm_mux 2019:04:11:16:04:12:SJ cbx_mgl 2019:04:11:16:07:46:SJ cbx_nadder 2019:04:11:16:04:12:SJ cbx_scfifo 2019:04:11:16:04:12:SJ cbx_stratix 2019:04:11:16:04:12:SJ cbx_stratixii 2019:04:11:16:04:12:SJ cbx_stratixiii 2019:04:11:16:04:12:SJ cbx_stratixv 2019:04:11:16:04:12:SJ cbx_util_mgl 2019:04:11:16:04:12:SJ  VERSION_END
+
+
+-- Copyright (C) 2019  Intel Corporation. All rights reserved.
+--  Your use of Intel Corporation's design tools, logic functions 
+--  and other software and tools, and any partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Intel Program License 
+--  Subscription Agreement, the Intel Quartus Prime License Agreement,
+--  the Intel FPGA IP License Agreement, or other applicable license
+--  agreement, including, without limitation, that your use is for
+--  the sole purpose of programming logic devices manufactured by
+--  Intel and sold by Intel or its authorized distributors.  Please
+--  refer to the applicable agreement for further details, at
+--  https://fpgasoftware.intel.com/eula.
+
+
+FUNCTION altsyncram_m3c1 (address_a[12..0], address_b[12..0], clock0, data_a[45..0], wren_a)
+RETURNS ( q_b[45..0]);
+FUNCTION cmpr_qt8 (dataa[12..0], datab[12..0])
+RETURNS ( aeb);
+FUNCTION cntr_5bb (clock, cnt_en, sclr)
+RETURNS ( q[11..0]);
+FUNCTION cntr_ib7 (clock, cnt_en, sclr, updown)
+RETURNS ( q[12..0]);
+FUNCTION cntr_6bb (clock, cnt_en, sclr)
+RETURNS ( q[12..0]);
+
+--synthesis_resources = lut 38 M9K 46 reg 59 
+SUBDESIGN a_dpfifo_lb31
+( 
+	clock	:	input;
+	data[45..0]	:	input;
+	empty	:	output;
+	full	:	output;
+	q[45..0]	:	output;
+	rreq	:	input;
+	sclr	:	input;
+	wreq	:	input;
+) 
+VARIABLE 
+	FIFOram : altsyncram_m3c1;
+	empty_dff : dffe;
+	full_dff : dffe;
+	low_addressa[12..0] : dffe;
+	rd_ptr_lsb : dffe;
+	usedw_is_0_dff : dffe;
+	usedw_is_1_dff : dffe;
+	usedw_is_2_dff : dffe;
+	wrreq_delaya[1..0] : dffe;
+	almost_full_comparer : cmpr_qt8;
+	three_comparison : cmpr_qt8;
+	rd_ptr_msb : cntr_5bb;
+	usedw_counter : cntr_ib7;
+	wr_ptr : cntr_6bb;
+	aclr	: NODE;
+	asynch_read_counter_enable	: WIRE;
+	empty_out	: WIRE;
+	full_out	: WIRE;
+	pulse_ram_output	: WIRE;
+	ram_read_address[12..0]	: WIRE;
+	rd_ptr[12..0]	: WIRE;
+	usedw_is_0	: WIRE;
+	usedw_is_1	: WIRE;
+	usedw_is_2	: WIRE;
+	usedw_will_be_0	: WIRE;
+	usedw_will_be_1	: WIRE;
+	usedw_will_be_2	: WIRE;
+	valid_rreq	: WIRE;
+	valid_wreq	: WIRE;
+	wait_state	: WIRE;
+
+BEGIN 
+	FIFOram.address_a[] = wr_ptr.q[];
+	FIFOram.address_b[] = ram_read_address[];
+	FIFOram.clock0 = clock;
+	FIFOram.data_a[] = data[];
+	FIFOram.wren_a = valid_wreq;
+	empty_dff.clk = clock;
+	empty_dff.clrn = (! aclr);
+	empty_dff.d = ((! (usedw_will_be_0 # wait_state)) & (! sclr));
+	full_dff.clk = clock;
+	full_dff.clrn = (! aclr);
+	full_dff.d = ((! sclr) & (((valid_wreq & (! valid_rreq)) & almost_full_comparer.aeb) # (full_dff.q & (! (valid_wreq $ valid_rreq)))));
+	low_addressa[].clk = clock;
+	low_addressa[].clrn = (! aclr);
+	low_addressa[].d = ((! sclr) & ((asynch_read_counter_enable & rd_ptr[]) # ((! asynch_read_counter_enable) & low_addressa[].q)));
+	rd_ptr_lsb.clk = clock;
+	rd_ptr_lsb.clrn = (! aclr);
+	rd_ptr_lsb.d = ((! rd_ptr_lsb.q) & (! sclr));
+	rd_ptr_lsb.ena = (asynch_read_counter_enable # sclr);
+	usedw_is_0_dff.clk = clock;
+	usedw_is_0_dff.clrn = (! aclr);
+	usedw_is_0_dff.d = (! usedw_will_be_0);
+	usedw_is_1_dff.clk = clock;
+	usedw_is_1_dff.clrn = (! aclr);
+	usedw_is_1_dff.d = usedw_will_be_1;
+	usedw_is_2_dff.clk = clock;
+	usedw_is_2_dff.clrn = (! aclr);
+	usedw_is_2_dff.d = usedw_will_be_2;
+	wrreq_delaya[].clk = clock;
+	wrreq_delaya[].clrn = (! aclr);
+	wrreq_delaya[].d = ( ((! sclr) & valid_wreq), ((! sclr) & wrreq_delaya[1].q));
+	almost_full_comparer.dataa[] = B"1111111111111";
+	almost_full_comparer.datab[] = usedw_counter.q[];
+	three_comparison.dataa[] = usedw_counter.q[];
+	three_comparison.datab[] = B"0000000000011";
+	rd_ptr_msb.clock = clock;
+	rd_ptr_msb.cnt_en = (asynch_read_counter_enable & (! rd_ptr_lsb.q));
+	rd_ptr_msb.sclr = sclr;
+	usedw_counter.clock = clock;
+	usedw_counter.cnt_en = (valid_wreq $ valid_rreq);
+	usedw_counter.sclr = sclr;
+	usedw_counter.updown = valid_wreq;
+	wr_ptr.clock = clock;
+	wr_ptr.cnt_en = valid_wreq;
+	wr_ptr.sclr = sclr;
+	aclr = GND;
+	asynch_read_counter_enable = pulse_ram_output;
+	empty = empty_out;
+	empty_out = (! empty_dff.q);
+	full = full_out;
+	full_out = full_dff.q;
+	pulse_ram_output = valid_rreq;
+	q[] = FIFOram.q_b[];
+	ram_read_address[] = (((! asynch_read_counter_enable) & low_addressa[].q) # (asynch_read_counter_enable & rd_ptr[]));
+	rd_ptr[] = ( rd_ptr_msb.q[], (! rd_ptr_lsb.q));
+	usedw_is_0 = (! usedw_is_0_dff.q);
+	usedw_is_1 = usedw_is_1_dff.q;
+	usedw_is_2 = usedw_is_2_dff.q;
+	usedw_will_be_0 = (! ((! sclr) & (! (((usedw_is_1 & valid_rreq) & (! valid_wreq)) # (usedw_is_0 & (! (valid_wreq $ valid_rreq)))))));
+	usedw_will_be_1 = ((! sclr) & (((usedw_is_1 & (! (valid_wreq $ valid_rreq))) # ((usedw_is_0 & valid_wreq) & (! valid_rreq))) # ((usedw_is_2 & valid_rreq) & (! valid_wreq))));
+	usedw_will_be_2 = ((! sclr) & (((usedw_is_2_dff.q & (! (valid_wreq $ valid_rreq))) # ((usedw_is_1 & valid_wreq) & (! valid_rreq))) # ((three_comparison.aeb & valid_rreq) & (! valid_wreq))));
+	valid_rreq = (rreq & (! empty_out));
+	valid_wreq = (wreq & (! full_out));
+	wait_state = (usedw_will_be_1 & valid_wreq);
+END;
+--VALID FILE

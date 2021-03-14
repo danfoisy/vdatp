@@ -1,0 +1,8 @@
+
+State Machine - |HoloTop|Holo:holo|readState
+Name readState.0011 readState.0010 readState.0001 readState.0000 readState.0100 
+readState.0000 0 0 0 0 0 
+readState.0001 0 0 1 1 0 
+readState.0010 0 1 0 1 0 
+readState.0011 1 0 0 1 0 
+readState.0100 0 0 0 1 1 

@@ -1,0 +1,214 @@
+# vsim -gui -l msim_transcript work.CalcPhase_tb -L lpm_ver -L altera_mf_ver 
+# Start time: 14:39:33 on Mar 13,2021
+# Loading sv_std.std
+# Loading work.CalcPhase_tb
+# Loading work.CalcPhase
+# Loading lpm_ver.lpm_add_sub
+# Loading altera_mf_ver.altsquare
+# Loading work.Int2Float
+# Loading work.Int2Float_altfp_convert_c1n
+# Loading work.Int2Float_altbarrel_shift_lvf
+# Loading work.Int2Float_altpriority_encoder_qb6
+# Loading work.Int2Float_altpriority_encoder_r08
+# Loading work.Int2Float_altpriority_encoder_bv7
+# Loading work.Int2Float_altpriority_encoder_6v7
+# Loading work.Int2Float_altpriority_encoder_3v7
+# Loading work.Int2Float_altpriority_encoder_3e8
+# Loading work.Int2Float_altpriority_encoder_6e8
+# Loading work.Int2Float_altpriority_encoder_be8
+# Loading work.Int2Float_altpriority_encoder_rf8
+# Loading lpm_ver.lpm_compare
+# Loading work.Sqrtf
+# Loading work.Sqrtf_altfp_sqrt_8qc
+# Loading work.Sqrtf_alt_sqrt_block_vjb
+# Loading work.MultK
+# Loading work.MultK_altfp_mult_mrn
+# Loading lpm_ver.lpm_mult
+# Loading lpm_ver.LPM_HINT_EVALUATION
+# Loading work.Float2Int
+# Loading work.Float2Int_altfp_convert_e1n
+# Loading work.Float2Int_altbarrel_shift_rvf
+# Loading lpm_ver.lpm_divide
+# ** Warning: (vsim-3017) D:/projects/holo/FPGA/Holo4/CalcPhase_tb.sv(36): [TFMPC] - Too few port connections. Expected 14, found 12.
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase File: D:/projects/holo/FPGA/Holo4/CalcPhase.sv
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase_tb.sv(36): [TFMPC] - Missing connection for port 'phaseEnabled'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase_tb.sv(36): [TFMPC] - Missing connection for port 'cycleStart'.
+# ** Warning: (vsim-3017) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(84): [TFMPC] - Too few port connections. Expected 10, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/xSubOp File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(84): [TFMPC] - Missing connection for port 'cin'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(84): [TFMPC] - Missing connection for port 'add_sub'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(84): [TFMPC] - Missing connection for port 'aclr'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(84): [TFMPC] - Missing connection for port 'clken'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(84): [TFMPC] - Missing connection for port 'cout'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(84): [TFMPC] - Missing connection for port 'overflow'.
+# ** Warning: (vsim-3017) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(97): [TFMPC] - Too few port connections. Expected 10, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/ySubOp File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(97): [TFMPC] - Missing connection for port 'cin'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(97): [TFMPC] - Missing connection for port 'add_sub'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(97): [TFMPC] - Missing connection for port 'aclr'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(97): [TFMPC] - Missing connection for port 'clken'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(97): [TFMPC] - Missing connection for port 'cout'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(97): [TFMPC] - Missing connection for port 'overflow'.
+# ** Warning: (vsim-3017) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(107): [TFMPC] - Too few port connections. Expected 10, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/zSubOp File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(107): [TFMPC] - Missing connection for port 'cin'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(107): [TFMPC] - Missing connection for port 'add_sub'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(107): [TFMPC] - Missing connection for port 'aclr'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(107): [TFMPC] - Missing connection for port 'clken'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(107): [TFMPC] - Missing connection for port 'cout'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(107): [TFMPC] - Missing connection for port 'overflow'.
+# ** Warning: (vsim-3017) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(153): [TFMPC] - Too few port connections. Expected 10, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/sumXZop File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(153): [TFMPC] - Missing connection for port 'cin'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(153): [TFMPC] - Missing connection for port 'add_sub'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(153): [TFMPC] - Missing connection for port 'aclr'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(153): [TFMPC] - Missing connection for port 'clken'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(153): [TFMPC] - Missing connection for port 'cout'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(153): [TFMPC] - Missing connection for port 'overflow'.
+# ** Warning: (vsim-3017) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(162): [TFMPC] - Too few port connections. Expected 10, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/sumXYZop File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(162): [TFMPC] - Missing connection for port 'cin'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(162): [TFMPC] - Missing connection for port 'add_sub'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(162): [TFMPC] - Missing connection for port 'aclr'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(162): [TFMPC] - Missing connection for port 'clken'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(162): [TFMPC] - Missing connection for port 'cout'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(162): [TFMPC] - Missing connection for port 'overflow'.
+# ** Warning: (vsim-3015) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(174): [PCDPC] - Port size (22) does not match connection size (23) for port 'dataa'. The port definition is at: D:/projects/holo/FPGA/Holo3/Int2Float.v(691).
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/int2Float File: D:/projects/holo/FPGA/Holo3/Int2Float.v
+# ** Warning: (vsim-3016) D:/projects/holo/FPGA/Holo3/Int2Float.v(474): Port type is incompatible with connection (port 'clock').
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/int2Float/Int2Float_altfp_convert_c1n_component/altbarrel_shift5 File: D:/projects/holo/FPGA/Holo3/Int2Float.v
+# ** Warning: (vsim-3016) D:/projects/holo/FPGA/Holo3/Sqrtf.v(1186): Port type is incompatible with connection (port 'clock').
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/sqrtfOp/Sqrtf_altfp_sqrt_8qc_component/alt_sqrt_block2 File: D:/projects/holo/FPGA/Holo3/Sqrtf.v
+# ** Warning: (vsim-3016) D:/projects/holo/FPGA/Holo3/MultK.v(454): Port type is incompatible with connection (port 'clock').
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/multKop/MultK_altfp_mult_mrn_component/man_product2_mult File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
+# ** Warning: (vsim-3016) D:/projects/holo/FPGA/Holo3/MultK.v(454): Port type is incompatible with connection (port 'clock').
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/scaleOp/MultK_altfp_mult_mrn_component/man_product2_mult File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
+# ** Warning: (vsim-3016) D:/projects/holo/FPGA/Holo3/Float2Int.v(284): Port type is incompatible with connection (port 'clock').
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/float2Int/Float2Int_altfp_convert_e1n_component/altbarrel_shift6 File: D:/projects/holo/FPGA/Holo3/Float2Int.v
+# ** Warning: (vsim-3017) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(220): [TFMPC] - Too few port connections. Expected 7, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/mod File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
+# ** Warning: (vsim-3016) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(220): Port type is incompatible with connection (port 'clock').
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/mod File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
+# ** Warning: (vsim-3015) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(220): [PCDPC] - Port size (10) does not match connection size (32) for port 'denom'. The port definition is at: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v(3274).
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/mod File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(220): [TFMPC] - Missing connection for port 'aclr'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(220): [TFMPC] - Missing connection for port 'clken'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(220): [TFMPC] - Missing connection for port 'quotient'.
+# ** Warning: (vsim-3017) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(233): [TFMPC] - Too few port connections. Expected 10, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/normalize File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
+# ** Warning: (vsim-3015) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(233): [PCDPC] - Port size (10) does not match connection size (32) for port 'datab'. The port definition is at: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v(2608).
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/normalize File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(233): [TFMPC] - Missing connection for port 'cin'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(233): [TFMPC] - Missing connection for port 'add_sub'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(233): [TFMPC] - Missing connection for port 'aclr'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(233): [TFMPC] - Missing connection for port 'clken'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(233): [TFMPC] - Missing connection for port 'cout'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(233): [TFMPC] - Missing connection for port 'overflow'.
+add wave -position end  sim:/CalcPhase_tb/clk
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: danfo  Hostname: DESKTOP-KUKC6E6  ProcessID: 10392
+#           Attempting to use alternate WLF file "./wlfta7qh6f".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfta7qh6f
+add wave -position end  sim:/CalcPhase_tb/start
+add wave -position end  sim:/CalcPhase_tb/done
+add wave -position end  sim:/CalcPhase_tb/calcPhase/x
+add wave -position end  sim:/CalcPhase_tb/calcPhase/y
+add wave -position end  sim:/CalcPhase_tb/calcPhase/z
+add wave -position end  sim:/CalcPhase_tb/calcPhase/xDiff
+add wave -position end  sim:/CalcPhase_tb/calcPhase/yDiff
+add wave -position end  sim:/CalcPhase_tb/calcPhase/zDiff
+add wave -position end  sim:/CalcPhase_tb/calcPhase/xSqr
+add wave -position end  sim:/CalcPhase_tb/calcPhase/ySqr
+add wave -position end  sim:/CalcPhase_tb/calcPhase/zSqr
+add wave -position end  sim:/CalcPhase_tb/calcPhase/sumXZ
+add wave -position end  sim:/CalcPhase_tb/calcPhase/sumXYZ
+add wave -position end  sim:/CalcPhase_tb/calcPhase/sumF
+add wave -position end  sim:/CalcPhase_tb/calcPhase/sqrtF
+add wave -position end  sim:/CalcPhase_tb/calcPhase/multKF
+add wave -position end  sim:/CalcPhase_tb/calcPhase/scaleF
+add wave -position end  sim:/CalcPhase_tb/calcPhase/scaleInt
+add wave -position end  sim:/CalcPhase_tb/calcPhase/remain
+add wave -position end  sim:/CalcPhase_tb/calcPhase/phaseInt
+add wave -position end  sim:/CalcPhase_tb/calcPhase/phase
+run
+run
+restart
+# ** Warning: (vsim-3017) D:/projects/holo/FPGA/Holo4/CalcPhase_tb.sv(36): [TFMPC] - Too few port connections. Expected 14, found 12.
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase File: D:/projects/holo/FPGA/Holo4/CalcPhase.sv
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase_tb.sv(36): [TFMPC] - Missing connection for port 'phaseEnabled'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase_tb.sv(36): [TFMPC] - Missing connection for port 'cycleStart'.
+# ** Warning: (vsim-3017) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(84): [TFMPC] - Too few port connections. Expected 10, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/xSubOp File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(84): [TFMPC] - Missing connection for port 'cin'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(84): [TFMPC] - Missing connection for port 'add_sub'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(84): [TFMPC] - Missing connection for port 'aclr'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(84): [TFMPC] - Missing connection for port 'clken'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(84): [TFMPC] - Missing connection for port 'cout'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(84): [TFMPC] - Missing connection for port 'overflow'.
+# ** Warning: (vsim-3017) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(97): [TFMPC] - Too few port connections. Expected 10, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/ySubOp File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(97): [TFMPC] - Missing connection for port 'cin'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(97): [TFMPC] - Missing connection for port 'add_sub'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(97): [TFMPC] - Missing connection for port 'aclr'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(97): [TFMPC] - Missing connection for port 'clken'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(97): [TFMPC] - Missing connection for port 'cout'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(97): [TFMPC] - Missing connection for port 'overflow'.
+# ** Warning: (vsim-3017) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(107): [TFMPC] - Too few port connections. Expected 10, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/zSubOp File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(107): [TFMPC] - Missing connection for port 'cin'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(107): [TFMPC] - Missing connection for port 'add_sub'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(107): [TFMPC] - Missing connection for port 'aclr'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(107): [TFMPC] - Missing connection for port 'clken'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(107): [TFMPC] - Missing connection for port 'cout'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(107): [TFMPC] - Missing connection for port 'overflow'.
+# ** Warning: (vsim-3017) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(153): [TFMPC] - Too few port connections. Expected 10, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/sumXZop File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(153): [TFMPC] - Missing connection for port 'cin'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(153): [TFMPC] - Missing connection for port 'add_sub'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(153): [TFMPC] - Missing connection for port 'aclr'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(153): [TFMPC] - Missing connection for port 'clken'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(153): [TFMPC] - Missing connection for port 'cout'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(153): [TFMPC] - Missing connection for port 'overflow'.
+# ** Warning: (vsim-3017) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(162): [TFMPC] - Too few port connections. Expected 10, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/sumXYZop File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(162): [TFMPC] - Missing connection for port 'cin'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(162): [TFMPC] - Missing connection for port 'add_sub'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(162): [TFMPC] - Missing connection for port 'aclr'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(162): [TFMPC] - Missing connection for port 'clken'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(162): [TFMPC] - Missing connection for port 'cout'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(162): [TFMPC] - Missing connection for port 'overflow'.
+# ** Warning: (vsim-3015) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(174): [PCDPC] - Port size (22) does not match connection size (23) for port 'dataa'. The port definition is at: D:/projects/holo/FPGA/Holo3/Int2Float.v(691).
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/int2Float File: D:/projects/holo/FPGA/Holo3/Int2Float.v
+# ** Warning: (vsim-3016) D:/projects/holo/FPGA/Holo3/Int2Float.v(474): Port type is incompatible with connection (port 'clock').
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/int2Float/Int2Float_altfp_convert_c1n_component/altbarrel_shift5 File: D:/projects/holo/FPGA/Holo3/Int2Float.v
+# ** Warning: (vsim-3016) D:/projects/holo/FPGA/Holo3/Sqrtf.v(1186): Port type is incompatible with connection (port 'clock').
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/sqrtfOp/Sqrtf_altfp_sqrt_8qc_component/alt_sqrt_block2 File: D:/projects/holo/FPGA/Holo3/Sqrtf.v
+# ** Warning: (vsim-3016) D:/projects/holo/FPGA/Holo3/MultK.v(454): Port type is incompatible with connection (port 'clock').
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/multKop/MultK_altfp_mult_mrn_component/man_product2_mult File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
+# ** Warning: (vsim-3016) D:/projects/holo/FPGA/Holo3/MultK.v(454): Port type is incompatible with connection (port 'clock').
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/scaleOp/MultK_altfp_mult_mrn_component/man_product2_mult File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
+# ** Warning: (vsim-3016) D:/projects/holo/FPGA/Holo3/Float2Int.v(284): Port type is incompatible with connection (port 'clock').
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/float2Int/Float2Int_altfp_convert_e1n_component/altbarrel_shift6 File: D:/projects/holo/FPGA/Holo3/Float2Int.v
+# ** Warning: (vsim-3017) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(220): [TFMPC] - Too few port connections. Expected 7, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/mod File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
+# ** Warning: (vsim-3016) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(220): Port type is incompatible with connection (port 'clock').
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/mod File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
+# ** Warning: (vsim-3015) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(220): [PCDPC] - Port size (10) does not match connection size (32) for port 'denom'. The port definition is at: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v(3274).
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/mod File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(220): [TFMPC] - Missing connection for port 'aclr'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(220): [TFMPC] - Missing connection for port 'clken'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(220): [TFMPC] - Missing connection for port 'quotient'.
+# ** Warning: (vsim-3017) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(233): [TFMPC] - Too few port connections. Expected 10, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/normalize File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
+# ** Warning: (vsim-3015) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(233): [PCDPC] - Port size (10) does not match connection size (32) for port 'datab'. The port definition is at: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v(2608).
+#    Time: 0 ps  Iteration: 0  Instance: /CalcPhase_tb/calcPhase/normalize File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(233): [TFMPC] - Missing connection for port 'cin'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(233): [TFMPC] - Missing connection for port 'add_sub'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(233): [TFMPC] - Missing connection for port 'aclr'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(233): [TFMPC] - Missing connection for port 'clken'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(233): [TFMPC] - Missing connection for port 'cout'.
+# ** Warning: (vsim-3722) D:/projects/holo/FPGA/Holo4/CalcPhase.sv(233): [TFMPC] - Missing connection for port 'overflow'.
+run
+# End time: 16:36:06 on Mar 13,2021, Elapsed time: 1:56:33
+# Errors: 0, Warnings: 118
