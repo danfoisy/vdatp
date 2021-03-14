@@ -5,6 +5,8 @@
 
 This was such a fun project - I still giggle (maniacally) when watching this thing go.  There's something truly magical about watching something levitate in mid-air and then start zipping around so fast, you can't see it.  In any case, I hope these project files help someone!
 
+Video: https://www.youtube.com/watch?v=hCC1C5KIeUA
+
 References:
 - PhysicsGirl acoustic levitator: https://www.youtube.com/watch?v=ABjRnSYw-4k
 - Acoustic levitator Instructable: https://www.instructables.com/Acoustic-Levitator/
