@@ -2,4 +2,6 @@
 - as_* nets on FGPA2 are wrong on top page
 - conf_done and nStatus lines should be connected together
 - PD on LED enable lines
+- silkscreen error R112/R131 switched
+
 
