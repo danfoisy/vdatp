@@ -25,6 +25,8 @@ Some notes:
 - distance between boards is not super critical - mine are set up 145mm apart but other distance work just as well
 - FPGAs can be programmed with a USB blaster type device.  I use https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=46
 -- all FPGAs get the same program
+- the transducers have a polarity marked on them - but don't trust the markings as they are wrong much of the time.  As well, I've been informed that there are phase discrepancies inherent in most of these cheap transducers.  I corrected for polarity errors by testing each transducer individually but did not correct for phase errors - this may be the cause of some of the distortions I saw.  I did check for these phase discrepancies and found a maximum of about 3% phase error across the transducers.  I don't know if this is enough to cause serious distortions but it may be worthwhile for someone to investigate.  If this is of concern, a simple LUT can be implemented to compensate for these errors on a transducer by transducer basis
+- running these boards at 15V causes the drivers to get really hot - I suggest running them at 10V.
 
 
 
