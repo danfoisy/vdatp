@@ -29,9 +29,7 @@ public:
     void calculatePower(Vector3D pt, float *powerData);
 
     enum class TrapType {
-        VORTEX,
-        TWIN,
-        BOTTLE,
+
         MATD
     };
 

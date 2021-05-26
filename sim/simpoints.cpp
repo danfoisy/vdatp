@@ -37,23 +37,9 @@ SimPoints::SimPoints()
 
                 float phase=0;
 
-                if(trapType==TrapType::VORTEX)
-                {
-                    phase = Helicity * atan2(z, x);
-                } else if(trapType == TrapType::TWIN) {
-                    float a = atan2(z,x);
-                    a = fmod(TwinAngle+a+4*M_PI,2*M_PI);
-
-                    if ((a > M_PI_2) && (a <= 3*M_PI_2))
-                        phase = (float)M_PI_2;
-                    else
-                        phase = (float)-M_PI_2;
-                } else if(trapType == TrapType::BOTTLE) {
-                    if (sqrtf(x*x+z*z) < BottleRadius)
-                        phase = 0;
-                else
-                        phase = (float)M_PI;
-                }
+                
+                phase = (float)M_PI;
+               
 
                 float y = (layer == 0) ? TransducerUpperYPos : TransducerLowerYPos;
                 float normal = (layer == 0) ? -1 : 1;
@@ -97,23 +83,7 @@ void SimPoints::calcFPGAPoints()
             {
                 float phase=0;
 
-                if(trapType==TrapType::VORTEX)
-                {
-                    phase = Helicity * atan2(z, x);
-                } else if(trapType == TrapType::TWIN) {
-                    float a = atan2(z,x);
-                    a = fmod(TwinAngle+a+4*M_PI,2*M_PI);
-
-                    if ((a > M_PI_2) && (a <= 3*M_PI_2))
-                        phase = (float)M_PI_2;
-                    else
-                        phase = (float)-M_PI_2;
-                } else if(trapType == TrapType::BOTTLE) {
-                    if (sqrtf(x*x+z*z) < BottleRadius)
-                        phase = 0;
-                    else
-                        phase = (float)M_PI;
-                }
+                
 
                 uint32_t* intPhase = (uint32_t*)&phase;
                 char str[15];
@@ -204,19 +174,7 @@ void SimPoints::initializePoints(float *pointsData)
 void SimPoints::calculatePower(Vector3D pt, float *powerData)
 {
     //calculate new phases with focused point
-    if(trapType != TrapType::MATD)
-    {
-        for(int t=0; t< (int)transducers.size(); t++){
-            Vector3D delta = pt - transducers[t].pt;
-            float r= delta.length();
-            float s= -r * WAVE_K;
-            float s1 = transducers[t].phase + s;
-            transducers[t].focusedPhase = fmodf(s1, 2*M_PI) + 2*M_PI;
 
-        }
-    }
-    else
-    {
         for(int t=0; t< (int)transducers.size(); t++){
             Vector3D delta = pt - transducers[t].pt;
             float r= delta.length();
@@ -227,7 +185,7 @@ void SimPoints::calculatePower(Vector3D pt, float *powerData)
             transducers[t].focusedPhase = fmodf(s1, 2*M_PI) + 2*M_PI;
 qDebug() << t << r<< s <<s1 << transducers[t].focusedPhase;
         }
-    }
+    
 
     if(!UseCuda)
         simCPU(powerData);
