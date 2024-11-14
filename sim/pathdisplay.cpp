@@ -13,8 +13,8 @@ void PathDisplay::initializeGL(Path *path, SimPoints &simPoints)
 
     delete m_program;
     m_program = new QOpenGLShaderProgram;
-    m_program->addShaderFromSourceFile(QOpenGLShader::Vertex, "../path.vert");
-    m_program->addShaderFromSourceFile(QOpenGLShader::Fragment, "../path.frag");
+    m_program->addShaderFromSourceFile(QOpenGLShader::Vertex, "../../Shaders/path.vert");
+    m_program->addShaderFromSourceFile(QOpenGLShader::Fragment, "../../Shaders/path.frag");
     m_program->link();
 
     m_projMatrixLoc = m_program->uniformLocation("projMatrix");

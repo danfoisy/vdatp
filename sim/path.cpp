@@ -45,6 +45,12 @@ void Path::calculateMotion()
       QVector3D c= v0;
       QVector3D d= q0;
 
+      if(a.x()== 0)
+          a.setX(0.01);
+      if(a.y()== 0)
+          a.setY(0.01);
+      if(a.z()== 0)
+          a.setZ(0.01);
       QVector3D maxV = -b*b/3/a+c;
       float max = fmaxf(fabsf(maxV.x()), fmaxf(fabsf(maxV.y()), fabsf(maxV.z())));
       int time = max / MAX_VELOCITY + 0.5;

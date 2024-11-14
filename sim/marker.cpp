@@ -14,9 +14,9 @@ void Marker::initializeGL()
 
     delete m_program;
     m_program = new QOpenGLShaderProgram;
-    m_program->addShaderFromSourceFile(QOpenGLShader::Vertex, "../marker.vert");
-    m_program->addShaderFromSourceFile(QOpenGLShader::Geometry, "../markerGeo.vert");
-    m_program->addShaderFromSourceFile(QOpenGLShader::Fragment, "../marker.frag");
+    m_program->addShaderFromSourceFile(QOpenGLShader::Vertex, "../../Shaders/marker.vert");
+    m_program->addShaderFromSourceFile(QOpenGLShader::Geometry, "../../Shaders/markerGeo.vert");
+    m_program->addShaderFromSourceFile(QOpenGLShader::Fragment, "../../Shaders/marker.frag");
     m_program->link();
 
     m_projMatrixLoc = m_program->uniformLocation("projMatrix");

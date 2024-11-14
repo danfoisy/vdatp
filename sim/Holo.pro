@@ -2,7 +2,7 @@ QT       += core gui opengl openglwidgets network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++11
+CONFIG += c++17
 
 LIBS += -lOpenGL32
 
@@ -58,6 +58,7 @@ MSVCRT_LINK_FLAG_DEBUG   = "/MDd"
 MSVCRT_LINK_FLAG_RELEASE = "/MD"
 
 # CUDA settings
+CUDA_DIR = d:/CUDA		    # ***** Set to your CUDA path *****
 CUDA_DIR = $$(CUDA_PATH)            # Path to cuda toolkit install
 SYSTEM_NAME = x64                   # Depending on your system either 'Win32', 'x64', or 'Win64'
 SYSTEM_TYPE = 64                    # '32' or '64', depending on your system
@@ -81,6 +82,9 @@ for(lib, CUDA_LIB_NAMES) {
     CUDA_LIBS += -l$$lib
 }
 LIBS += $$CUDA_LIBS
+
+win32:LIBS += -Ld:/CUDA/lib/x64
+
 
 # Configuration of the Cuda compiler
 CONFIG(debug, debug|release) {
@@ -109,6 +113,7 @@ else {
     cuda.dependency_type = TYPE_C
     QMAKE_EXTRA_COMPILERS += cuda
 }
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

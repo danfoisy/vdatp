@@ -39,8 +39,8 @@ void PointCloud::initializeGL(QString paletteFilename)
 
     delete m_program;
     m_program = new QOpenGLShaderProgram;
-    m_program->addShaderFromSourceFile(QOpenGLShader::Vertex, "../pointcloud.vert");
-    m_program->addShaderFromSourceFile(QOpenGLShader::Fragment, "../pointcloud.frag");
+    m_program->addShaderFromSourceFile(QOpenGLShader::Vertex, "../../Shaders/pointcloud.vert");
+    m_program->addShaderFromSourceFile(QOpenGLShader::Fragment, "../../Shaders/pointcloud.frag");
     m_program->link();
     m_program->bind();
 
@@ -96,8 +96,8 @@ void PointCloud::initializeGL(QString paletteFilename)
 
     //----------------------------------------------------------------------------
     m_programPlanes = new QOpenGLShaderProgram;
-    m_programPlanes->addShaderFromSourceFile(QOpenGLShader::Vertex, "../plane.vert");
-    m_programPlanes->addShaderFromSourceFile(QOpenGLShader::Fragment, "../plane.frag");
+    m_programPlanes->addShaderFromSourceFile(QOpenGLShader::Vertex, "../../Shaders/plane.vert");
+    m_programPlanes->addShaderFromSourceFile(QOpenGLShader::Fragment, "../../Shaders/plane.frag");
     m_programPlanes->link();
     m_programPlanes->bind();
 

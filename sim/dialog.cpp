@@ -15,7 +15,7 @@
 #include <QColorDialog>
 #include "slider.h"
 
-const QString PaletteFilename = "BlAqGrYeOrRe_labelbar.500.png";
+const QString PaletteFilename = "../../Shaders/BlAqGrYeOrRe_labelbar.500.png";
 
 
 Dialog::Dialog(QWidget *parent)
@@ -28,8 +28,8 @@ Dialog::Dialog(QWidget *parent)
     QVBoxLayout *glWidgetBox = new QVBoxLayout;
 
 #define DIM 20
-    path.lineTo(0,0,0, Qt::yellow);
-    path.lineTo(-DIM,-DIM,0, Qt::green);
+    path.lineTo(0,0,1, Qt::yellow);
+    path.lineTo(-DIM,-DIM,2, Qt::green);
     path.lineTo(DIM,-DIM,0,Qt::blue);
     path.lineTo(DIM,+DIM,0,Qt::cyan);
     path.lineTo(-DIM,+DIM,0,Qt::blue);
