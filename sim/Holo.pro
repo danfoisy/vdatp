@@ -64,6 +64,7 @@ SYSTEM_NAME = x64                   # Depending on your system either 'Win32', '
 SYSTEM_TYPE = 64                    # '32' or '64', depending on your system
 CUDA_ARCH = sm_60                   # Type of CUDA architecture
 NVCC_OPTIONS = --use_fast_math
+CUDA_OBJECTS_DIR = $$(PWD)
 
 # include paths
 INCLUDEPATH += $$CUDA_DIR/include \
